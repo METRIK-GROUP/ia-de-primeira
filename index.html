@@ -215,6 +215,16 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .img-compare-label--left{left:14px;background:rgba(10,10,10,0.65);color:#fff;border:1px solid rgba(255,255,255,0.12)}
 .img-compare-label--right{right:14px;background:rgba(122,175,212,0.85);color:#0a0a0a}
 
+/* slider scene thumbs */
+.cmp-thumbs{display:flex;gap:10px;margin-top:14px;justify-content:center;flex-wrap:wrap}
+.cmp-thumb{position:relative;width:96px;height:62px;border-radius:10px;overflow:hidden;border:1px solid var(--line-strong);background:#0a0a0a;padding:0;cursor:pointer;transition:border-color .25s ease,transform .25s ease;outline-offset:3px}
+.cmp-thumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:0.7;transition:opacity .25s ease}
+.cmp-thumb:hover{transform:translateY(-2px);border-color:var(--accent)}
+.cmp-thumb:hover img{opacity:1}
+.cmp-thumb.is-active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(122,175,212,0.32),0 10px 30px rgba(0,0,0,0.4)}
+.cmp-thumb.is-active img{opacity:1}
+.cmp-thumb-label{position:absolute;bottom:5px;left:6px;right:6px;font-family:'Maven Pro',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;text-align:left;text-shadow:0 1px 4px rgba(0,0,0,0.7)}
+
 /* flowchart mockup dark (dobra 01) */
 .flowchart-mockup{
   background:linear-gradient(160deg,rgba(255,255,255,0.04) 0%,rgba(10,12,18,0.7) 100%);
@@ -862,13 +872,31 @@ footer a:hover{color:#fff}
     </div>
     <div class="mock gs" style="padding:0;background:transparent;border:0;box-shadow:none">
       <div class="img-compare" id="render-compare">
-        <img src="img/render-fotorrealista.jpg" alt="Render fotorrealista do projeto" draggable="false" loading="lazy" decoding="async">
+        <img id="cmp-base" src="img/render-fotorrealista.jpg" alt="Render fotorrealista" draggable="false" loading="lazy" decoding="async">
         <div class="img-compare-overlay">
-          <img src="img/sketchup-3d.jpg" alt="Cena 3D no SketchUp" draggable="false" loading="lazy" decoding="async">
+          <img id="cmp-over" src="img/sketchup-3d.jpg" alt="Cena 3D no software de projeto" draggable="false" loading="lazy" decoding="async">
         </div>
-        <div class="img-compare-handle" role="slider" tabindex="0" aria-label="Arraste para comparar SketchUp e render" aria-valuenow="50" aria-valuemin="5" aria-valuemax="95">
+        <div class="img-compare-handle" role="slider" tabindex="0" aria-label="Arraste para comparar viewport e render" aria-valuenow="50" aria-valuemin="5" aria-valuemax="95">
           <div class="img-compare-grip"></div>
         </div>
+      </div>
+      <div class="cmp-thumbs" role="tablist" aria-label="Trocar cena">
+        <button class="cmp-thumb is-active" type="button" role="tab" aria-selected="true" data-base="img/render-fotorrealista.jpg" data-over="img/sketchup-3d.jpg" aria-label="Sala de jogos">
+          <img src="img/render-fotorrealista.jpg" alt="" loading="lazy">
+          <span class="cmp-thumb-label">Sala</span>
+        </button>
+        <button class="cmp-thumb" type="button" role="tab" aria-selected="false" data-base="img/hall-render.jpg" data-over="img/hall-viewport.png" aria-label="Hall de entrada">
+          <img src="img/hall-render.jpg" alt="" loading="lazy">
+          <span class="cmp-thumb-label">Hall</span>
+        </button>
+        <button class="cmp-thumb" type="button" role="tab" aria-selected="false" data-base="img/suite-render.jpg" data-over="img/suite-viewport.jpg" aria-label="Suíte">
+          <img src="img/suite-render.jpg" alt="" loading="lazy">
+          <span class="cmp-thumb-label">Suíte</span>
+        </button>
+        <button class="cmp-thumb" type="button" role="tab" aria-selected="false" data-base="img/rooftop-render.jpg" data-over="img/rooftop-viewport.png" aria-label="Rooftop">
+          <img src="img/rooftop-render.jpg" alt="" loading="lazy">
+          <span class="cmp-thumb-label">Rooftop</span>
+        </button>
       </div>
     </div>
   </div>
@@ -1223,6 +1251,30 @@ footer a:hover{color:#fff}
       overlay.style.width = nxt + '%';
       handle.style.left = nxt + '%';
       handle.setAttribute('aria-valuenow', Math.round(nxt));
+    });
+
+    // ===== scene thumbs (troca cena do slider) =====
+    var baseImg = document.getElementById('cmp-base');
+    var overImg = document.getElementById('cmp-over');
+    var thumbs  = document.querySelectorAll('.cmp-thumb');
+    thumbs.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var base = btn.getAttribute('data-base');
+        var over = btn.getAttribute('data-over');
+        if (!base || !over) return;
+        baseImg.src = base;
+        overImg.src = over;
+        // reset slider pro meio
+        overlay.style.width = '50%';
+        handle.style.left = '50%';
+        handle.setAttribute('aria-valuenow', '50');
+        // ativa thumb
+        thumbs.forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected','true');
+        // re-sync overlay width
+        setTimeout(syncWidth, 50);
+      });
     });
   })();
 

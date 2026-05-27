@@ -689,18 +689,44 @@ footer a:hover{color:#fff}
               <stop offset="1" stop-color="#0a0c0a"/>
             </linearGradient>
             <linearGradient id="renderGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#9FE0B8" stop-opacity="0.35"/>
+              <stop offset="0" stop-color="#FBBF24" stop-opacity="0.45"/>
+              <stop offset="0.5" stop-color="#F472B6" stop-opacity="0.2"/>
               <stop offset="1" stop-color="#9FE0B8" stop-opacity="0.05"/>
             </linearGradient>
+            <linearGradient id="cardActiveGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#34D399" stop-opacity="0.12"/>
+              <stop offset="1" stop-color="#34D399" stop-opacity="0.02"/>
+            </linearGradient>
+            <linearGradient id="connectorGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#34D399"/>
+              <stop offset="1" stop-color="#9FE0B8"/>
+            </linearGradient>
+            <filter id="devGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
           </defs>
           <rect width="640" height="440" fill="url(#devBg)"/>
 
           <!-- top bar -->
           <rect x="0" y="0" width="640" height="44" fill="#0c1110"/>
-          <text x="24" y="28" font-family="Maven Pro" font-size="11" font-weight="700" letter-spacing="1.4" fill="#9FE0B8">FLUXO DE PROJETO</text>
-          <rect x="552" y="14" width="74" height="22" rx="11" fill="#9FE0B8" opacity="0.18"/>
-          <circle cx="566" cy="25" r="2.5" fill="#9FE0B8"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
-          <text x="589" y="29" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" text-anchor="middle">IA · ATIVA</text>
+          <line x1="0" y1="44" x2="640" y2="44" stroke="#9FE0B8" stroke-opacity="0.12"/>
+          <!-- title + counter -->
+          <g transform="translate(24,16)">
+            <circle cx="0" cy="8" r="4" fill="#34D399">
+              <animate attributeName="opacity" values="1;0.4;1" dur="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="12" y="12" font-family="Maven Pro" font-size="11" font-weight="700" letter-spacing="1.4" fill="#9FE0B8">FLUXO DE PROJETO</text>
+            <text x="142" y="12" font-family="Inter" font-size="9" fill="#fff" opacity="0.45">· semana 2 de 4</text>
+          </g>
+          <!-- progress bar mini -->
+          <rect x="320" y="20" width="160" height="6" rx="3" fill="#ffffff" fill-opacity="0.06"/>
+          <rect x="320" y="20" width="80" height="6" rx="3" fill="#34D399"/>
+          <text x="486" y="26" font-family="Maven Pro" font-size="9" font-weight="700" fill="#34D399">50%</text>
+          <!-- IA ATIVA pill -->
+          <rect x="540" y="14" width="86" height="22" rx="11" fill="#34D399" opacity="0.18" stroke="#34D399" stroke-opacity="0.4"/>
+          <circle cx="554" cy="25" r="2.5" fill="#34D399"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+          <text x="583" y="29" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#34D399" text-anchor="middle">IA · ATIVA</text>
 
           <!-- subtle grid -->
           <g stroke="#ffffff" stroke-opacity="0.03">
@@ -709,143 +735,212 @@ footer a:hover{color:#fff}
             <line x1="0" y1="320" x2="640" y2="320"/>
           </g>
 
-          <!-- connector arrows entre cards -->
-          <g stroke="#9FE0B8" stroke-opacity="0.45" stroke-width="1.4" fill="none">
-            <path d="M170 222 L 195 222"/>
-            <path d="M188 217 L 195 222 L 188 227"/>
-            <path d="M315 222 L 340 222"/>
-            <path d="M333 217 L 340 222 L 333 227"/>
-            <path d="M460 222 L 485 222"/>
-            <path d="M453 217 L 460 222 L 453 227"/>
+          <!-- connector arrows entre cards (done = bright, next = faded) -->
+          <g fill="none" stroke-width="1.6">
+            <!-- 1->2 done -->
+            <path d="M170 222 L 195 222" stroke="#34D399" stroke-opacity="0.85"/>
+            <path d="M188 217 L 195 222 L 188 227" stroke="#34D399" stroke-opacity="0.85"/>
+            <!-- 2->3 in progress (dashed) -->
+            <path d="M315 222 L 340 222" stroke="#34D399" stroke-opacity="0.85" stroke-dasharray="3 3">
+              <animate attributeName="stroke-dashoffset" values="0;-12" dur="0.9s" repeatCount="indefinite"/>
+            </path>
+            <path d="M333 217 L 340 222 L 333 227" stroke="#34D399" stroke-opacity="0.85"/>
+            <!-- 3->4 future -->
+            <path d="M460 222 L 485 222" stroke="#9FE0B8" stroke-opacity="0.25"/>
+            <path d="M478 217 L 485 222 L 478 227" stroke="#9FE0B8" stroke-opacity="0.25"/>
           </g>
 
-          <!-- ==== CARD 1: BRIEFING ==== -->
+          <!-- ==== CARD 1: BRIEFING (CONCLUIDO) ==== -->
           <g>
-            <rect x="40" y="90" width="135" height="270" rx="10" fill="rgba(159,224,184,0.04)" stroke="#9FE0B8" stroke-opacity="0.3"/>
-            <text x="52" y="112" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" opacity="0.85">01 · BRIEFING</text>
+            <rect x="40" y="90" width="135" height="270" rx="10" fill="rgba(159,224,184,0.04)" stroke="#34D399" stroke-opacity="0.35"/>
+            <!-- status header bar -->
+            <rect x="40" y="90" width="135" height="3" rx="1.5" fill="#34D399"/>
+            <!-- step label + status check -->
+            <text x="52" y="114" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" opacity="0.9">01 · BRIEFING</text>
+            <g transform="translate(157,108)">
+              <circle cx="0" cy="0" r="6" fill="#34D399"/>
+              <path d="M-2.5 0 L -0.5 2 L 3 -2" stroke="#0a0c0a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
             <!-- mini doc with highlight lines -->
-            <rect x="52" y="128" width="111" height="156" rx="6" fill="#000" opacity="0.35" stroke="#ffffff" stroke-opacity="0.06"/>
+            <rect x="52" y="128" width="111" height="156" rx="6" fill="#000" opacity="0.4" stroke="#ffffff" stroke-opacity="0.06"/>
             <g fill="#ffffff">
-              <rect x="62" y="140" width="60" height="6" rx="2" opacity="0.85"/>
+              <rect x="62" y="140" width="60" height="6" rx="2" opacity="0.9"/>
               <rect x="62" y="154" width="90" height="4" rx="2" opacity="0.32"/>
               <rect x="62" y="164" width="80" height="4" rx="2" opacity="0.32"/>
               <rect x="62" y="174" width="92" height="4" rx="2" opacity="0.32"/>
               <rect x="62" y="184" width="55" height="4" rx="2" opacity="0.32"/>
-              <rect x="62" y="200" width="40" height="5" rx="2" opacity="0.85"/>
-              <rect x="62" y="212" width="86" height="4" rx="2" opacity="0.32"/>
-              <rect x="62" y="222" width="70" height="4" rx="2" opacity="0.32"/>
-              <rect x="62" y="232" width="88" height="4" rx="2" opacity="0.32"/>
+            </g>
+            <!-- key fact callout amber -->
+            <rect x="60" y="196" width="96" height="14" rx="3" fill="#FBBF24" opacity="0.18"/>
+            <rect x="62" y="200" width="60" height="6" rx="2" fill="#FBBF24" opacity="0.9"/>
+            <g fill="#ffffff">
+              <rect x="62" y="218" width="86" height="4" rx="2" opacity="0.32"/>
+              <rect x="62" y="228" width="70" height="4" rx="2" opacity="0.32"/>
             </g>
             <!-- IA highlight marker on a line -->
-            <rect x="60" y="248" width="96" height="14" rx="3" fill="#9FE0B8" opacity="0.18"/>
-            <rect x="62" y="252" width="92" height="6" rx="2" fill="#9FE0B8" opacity="0.85"/>
+            <rect x="60" y="244" width="96" height="14" rx="3" fill="#34D399" opacity="0.22"/>
+            <rect x="62" y="248" width="92" height="6" rx="2" fill="#34D399" opacity="0.95"/>
+            <g fill="#ffffff">
+              <rect x="62" y="266" width="60" height="4" rx="2" opacity="0.32"/>
+            </g>
             <!-- IA badge -->
-            <rect x="52" y="304" width="60" height="20" rx="10" fill="#9FE0B8" opacity="0.18" stroke="#9FE0B8" stroke-opacity="0.35"/>
-            <text x="82" y="318" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#9FE0B8" text-anchor="middle">IA · EXTRAI</text>
-            <text x="52" y="345" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.6">requisitos do cliente</text>
+            <rect x="52" y="298" width="74" height="22" rx="11" fill="#34D399" opacity="0.18" stroke="#34D399" stroke-opacity="0.5"/>
+            <text x="89" y="313" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#34D399" text-anchor="middle">IA · EXTRAI</text>
+            <text x="52" y="338" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.7">requisitos do cliente</text>
+            <text x="52" y="352" font-family="Inter" font-size="8" fill="#FBBF24" opacity="0.85">▴ 24 itens detectados</text>
           </g>
 
-          <!-- ==== CARD 2: ESTUDO ==== -->
+          <!-- ==== CARD 2: ESTUDO (CONCLUIDO) ==== -->
           <g>
-            <rect x="195" y="90" width="135" height="270" rx="10" fill="rgba(159,224,184,0.04)" stroke="#9FE0B8" stroke-opacity="0.3"/>
-            <text x="207" y="112" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" opacity="0.85">02 · ESTUDO</text>
+            <rect x="195" y="90" width="135" height="270" rx="10" fill="rgba(159,224,184,0.04)" stroke="#34D399" stroke-opacity="0.35"/>
+            <rect x="195" y="90" width="135" height="3" rx="1.5" fill="#34D399"/>
+            <text x="207" y="114" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" opacity="0.9">02 · ESTUDO</text>
+            <g transform="translate(312,108)">
+              <circle cx="0" cy="0" r="6" fill="#34D399"/>
+              <path d="M-2.5 0 L -0.5 2 L 3 -2" stroke="#0a0c0a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
             <!-- mini floorplan -->
-            <rect x="207" y="128" width="111" height="156" rx="6" fill="#000" opacity="0.35" stroke="#ffffff" stroke-opacity="0.06"/>
-            <g fill="none" stroke="#9FE0B8" stroke-width="1.8" opacity="0.9">
+            <rect x="207" y="128" width="111" height="156" rx="6" fill="#000" opacity="0.4" stroke="#ffffff" stroke-opacity="0.06"/>
+            <g fill="none" stroke="#9FE0B8" stroke-width="1.8" opacity="0.95">
               <path d="M218 142 L 308 142 L 308 270 L 218 270 Z"/>
               <line x1="262" y1="142" x2="262" y2="210"/>
               <line x1="262" y1="210" x2="308" y2="210"/>
             </g>
-            <g fill="#9FE0B8" opacity="0.25">
+            <!-- rooms: alguns destacados pela IA -->
+            <g fill="#9FE0B8" opacity="0.22">
               <rect x="224" y="150" width="32" height="22" rx="1"/>
-              <rect x="224" y="180" width="22" height="22" rx="1"/>
-              <rect x="268" y="150" width="34" height="24" rx="1"/>
               <rect x="268" y="180" width="34" height="20" rx="1"/>
-              <rect x="224" y="220" width="32" height="42" rx="1"/>
               <rect x="266" y="220" width="38" height="42" rx="1"/>
             </g>
+            <!-- IA highlighted rooms (amber + cyan) -->
+            <g>
+              <rect x="224" y="180" width="22" height="22" rx="1" fill="#FBBF24" opacity="0.55"/>
+              <rect x="268" y="150" width="34" height="24" rx="1" fill="#67E8F9" opacity="0.55"/>
+              <rect x="224" y="220" width="32" height="42" rx="1" fill="#F472B6" opacity="0.45"/>
+            </g>
+            <!-- room labels -->
+            <g font-family="Inter" font-size="6" font-weight="700" fill="#0a0c0a" text-anchor="middle">
+              <text x="240" y="194">SALA</text>
+              <text x="285" y="165">SUÍTE</text>
+              <text x="240" y="244">COZ.</text>
+            </g>
+            <!-- area total -->
+            <text x="263" y="298" font-family="Maven Pro" font-size="9" font-weight="700" fill="#9FE0B8" text-anchor="middle" opacity="0.75">142m²</text>
             <!-- IA badge -->
-            <rect x="207" y="304" width="68" height="20" rx="10" fill="#9FE0B8" opacity="0.18" stroke="#9FE0B8" stroke-opacity="0.35"/>
-            <text x="241" y="318" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#9FE0B8" text-anchor="middle">IA · PROPÕE</text>
-            <text x="207" y="345" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.6">layout volumétrico</text>
+            <rect x="207" y="298" width="86" height="22" rx="11" fill="#34D399" opacity="0.18" stroke="#34D399" stroke-opacity="0.5"/>
+            <text x="250" y="313" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#34D399" text-anchor="middle">IA · PROPÕE</text>
+            <text x="207" y="338" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.7">layout volumétrico</text>
+            <text x="207" y="352" font-family="Inter" font-size="8" fill="#FBBF24" opacity="0.85">▴ 3 opções geradas</text>
           </g>
 
-          <!-- ==== CARD 3: APRESENTAÇÃO ==== -->
+          <!-- ==== CARD 3: APRESENTAÇÃO (EM CURSO) ==== -->
           <g>
-            <rect x="340" y="90" width="135" height="270" rx="10" fill="rgba(159,224,184,0.04)" stroke="#9FE0B8" stroke-opacity="0.3"/>
-            <text x="352" y="112" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" opacity="0.85">03 · APRESENTAÇÃO</text>
-            <!-- render thumb -->
-            <rect x="352" y="128" width="111" height="156" rx="6" fill="url(#renderGrad)" stroke="#ffffff" stroke-opacity="0.06"/>
-            <!-- room outline -->
-            <path d="M352 252 L 463 252 L 463 284 L 352 284 Z" fill="#000" opacity="0.35"/>
-            <!-- window glow -->
-            <rect x="365" y="148" width="38" height="60" rx="2" fill="#9FE0B8" opacity="0.35"/>
-            <line x1="384" y1="148" x2="384" y2="208" stroke="#9FE0B8" stroke-opacity="0.7"/>
-            <line x1="365" y1="178" x2="403" y2="178" stroke="#9FE0B8" stroke-opacity="0.7"/>
+            <rect x="340" y="90" width="135" height="270" rx="10" fill="url(#cardActiveGrad)" stroke="#34D399" stroke-opacity="0.7"/>
+            <rect x="340" y="90" width="135" height="3" rx="1.5" fill="#34D399">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.6s" repeatCount="indefinite"/>
+            </rect>
+            <text x="352" y="114" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#34D399">03 · APRESENTAÇÃO</text>
+            <!-- in-progress spinner -->
+            <g transform="translate(457,108)">
+              <circle cx="0" cy="0" r="6" fill="none" stroke="#34D399" stroke-opacity="0.25" stroke-width="2"/>
+              <circle cx="0" cy="0" r="6" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 28" transform="rotate(-90)">
+                <animateTransform attributeName="transform" type="rotate" from="-90" to="270" dur="1.4s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+            <!-- render thumb com luz quente -->
+            <rect x="352" y="128" width="111" height="156" rx="6" fill="url(#renderGrad)" stroke="#34D399" stroke-opacity="0.25"/>
+            <!-- room floor -->
+            <path d="M352 252 L 463 252 L 463 284 L 352 284 Z" fill="#000" opacity="0.45"/>
+            <!-- window glow quente -->
+            <rect x="365" y="148" width="38" height="60" rx="2" fill="#FBBF24" opacity="0.55"/>
+            <line x1="384" y1="148" x2="384" y2="208" stroke="#FEF3C7" stroke-opacity="0.8"/>
+            <line x1="365" y1="178" x2="403" y2="178" stroke="#FEF3C7" stroke-opacity="0.8"/>
+            <!-- light shaft -->
+            <path d="M365 208 L 403 208 L 445 282 L 320 282 Z" fill="#FBBF24" opacity="0.08"/>
             <!-- sofa -->
-            <rect x="415" y="220" width="42" height="18" rx="3" fill="#ffffff" opacity="0.22"/>
-            <rect x="415" y="206" width="42" height="14" rx="3" fill="#ffffff" opacity="0.15"/>
+            <rect x="415" y="220" width="42" height="18" rx="3" fill="#F472B6" opacity="0.35"/>
+            <rect x="415" y="206" width="42" height="14" rx="3" fill="#F472B6" opacity="0.22"/>
             <!-- pendant -->
-            <line x1="442" y1="148" x2="442" y2="195" stroke="#ffffff" stroke-opacity="0.35"/>
-            <circle cx="442" cy="200" r="5" fill="#9FE0B8" opacity="0.45"/>
+            <line x1="442" y1="148" x2="442" y2="195" stroke="#ffffff" stroke-opacity="0.4"/>
+            <circle cx="442" cy="200" r="6" fill="#FBBF24" opacity="0.85" filter="url(#devGlow)"/>
             <!-- table -->
-            <rect x="425" y="246" width="24" height="6" rx="1" fill="#ffffff" opacity="0.2"/>
+            <rect x="425" y="246" width="24" height="6" rx="1" fill="#67E8F9" opacity="0.45"/>
+            <!-- plant -->
+            <rect x="362" y="244" width="6" height="8" fill="#9FE0B8" opacity="0.7"/>
+            <circle cx="365" cy="240" r="5" fill="#34D399" opacity="0.65"/>
             <!-- IA badge -->
-            <rect x="352" y="304" width="64" height="20" rx="10" fill="#9FE0B8" opacity="0.18" stroke="#9FE0B8" stroke-opacity="0.35"/>
-            <text x="384" y="318" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#9FE0B8" text-anchor="middle">IA · GERA</text>
-            <text x="352" y="345" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.6">imagens fotorrealistas</text>
+            <rect x="352" y="298" width="64" height="22" rx="11" fill="#34D399" opacity="0.3" stroke="#34D399" stroke-opacity="0.7"/>
+            <text x="384" y="313" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#34D399" text-anchor="middle">IA · GERA</text>
+            <text x="352" y="338" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.85">imagens fotorrealistas</text>
+            <text x="352" y="352" font-family="Inter" font-size="8" fill="#34D399" opacity="0.95">⟳ renderizando 8 cenas</text>
           </g>
 
-          <!-- ==== CARD 4: EXECUTIVOS ==== -->
-          <g>
-            <rect x="485" y="90" width="135" height="270" rx="10" fill="rgba(159,224,184,0.04)" stroke="#9FE0B8" stroke-opacity="0.3"/>
-            <text x="497" y="112" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" opacity="0.85">04 · EXECUTIVOS</text>
+          <!-- ==== CARD 4: EXECUTIVOS (PROXIMO) ==== -->
+          <g opacity="0.78">
+            <rect x="485" y="90" width="135" height="270" rx="10" fill="rgba(159,224,184,0.025)" stroke="#9FE0B8" stroke-opacity="0.22"/>
+            <rect x="485" y="90" width="135" height="3" rx="1.5" fill="#9FE0B8" opacity="0.3"/>
+            <text x="497" y="114" font-family="Maven Pro" font-size="9" font-weight="700" letter-spacing="1.2" fill="#9FE0B8" opacity="0.6">04 · EXECUTIVOS</text>
+            <g transform="translate(602,108)">
+              <circle cx="0" cy="0" r="6" fill="none" stroke="#9FE0B8" stroke-opacity="0.35" stroke-width="1.5"/>
+              <circle cx="0" cy="0" r="1.5" fill="#9FE0B8" opacity="0.5"/>
+            </g>
             <!-- detailing sheet -->
-            <rect x="497" y="128" width="111" height="156" rx="6" fill="#000" opacity="0.35" stroke="#ffffff" stroke-opacity="0.06"/>
+            <rect x="497" y="128" width="111" height="156" rx="6" fill="#000" opacity="0.3" stroke="#ffffff" stroke-opacity="0.05"/>
             <!-- elevation -->
-            <g fill="none" stroke="#9FE0B8" stroke-width="1.5" opacity="0.85">
+            <g fill="none" stroke="#9FE0B8" stroke-width="1.5" opacity="0.65">
               <path d="M508 230 L 597 230 L 597 250 L 508 250 Z"/>
               <line x1="528" y1="230" x2="528" y2="250"/>
               <line x1="558" y1="230" x2="558" y2="250"/>
               <line x1="578" y1="230" x2="578" y2="250"/>
             </g>
             <!-- detail callout circle -->
-            <circle cx="540" cy="170" r="22" fill="none" stroke="#9FE0B8" stroke-opacity="0.55" stroke-width="1.2" stroke-dasharray="2 3"/>
-            <g fill="#9FE0B8" opacity="0.4">
+            <circle cx="540" cy="170" r="22" fill="none" stroke="#67E8F9" stroke-opacity="0.55" stroke-width="1.2" stroke-dasharray="2 3"/>
+            <g fill="#67E8F9" opacity="0.45">
               <rect x="530" y="160" width="20" height="6" rx="1"/>
               <rect x="530" y="170" width="14" height="6" rx="1"/>
               <rect x="530" y="180" width="18" height="3" rx="1"/>
             </g>
             <!-- dimension lines -->
-            <g stroke="#9FE0B8" stroke-opacity="0.6" stroke-width="0.8">
+            <g stroke="#9FE0B8" stroke-opacity="0.5" stroke-width="0.8">
               <line x1="508" y1="262" x2="597" y2="262"/>
               <line x1="508" y1="258" x2="508" y2="266"/>
               <line x1="552" y1="258" x2="552" y2="266"/>
               <line x1="597" y1="258" x2="597" y2="266"/>
             </g>
-            <text x="528" y="275" font-family="Inter" font-size="6" fill="#9FE0B8" opacity="0.7">2.40m</text>
-            <text x="572" y="275" font-family="Inter" font-size="6" fill="#9FE0B8" opacity="0.7">2.40m</text>
+            <text x="528" y="275" font-family="Inter" font-size="6" fill="#9FE0B8" opacity="0.6">2.40m</text>
+            <text x="572" y="275" font-family="Inter" font-size="6" fill="#9FE0B8" opacity="0.6">2.40m</text>
             <!-- IA badge -->
-            <rect x="497" y="304" width="78" height="20" rx="10" fill="#9FE0B8" opacity="0.18" stroke="#9FE0B8" stroke-opacity="0.35"/>
-            <text x="536" y="318" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#9FE0B8" text-anchor="middle">IA · DETALHA</text>
-            <text x="497" y="345" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.6">memorial e cotas</text>
+            <rect x="497" y="298" width="86" height="22" rx="11" fill="#9FE0B8" opacity="0.08" stroke="#9FE0B8" stroke-opacity="0.25" stroke-dasharray="3 2"/>
+            <text x="540" y="313" font-family="Maven Pro" font-size="8" font-weight="700" letter-spacing="1" fill="#9FE0B8" text-anchor="middle" opacity="0.6">IA · DETALHA</text>
+            <text x="497" y="338" font-family="Inter" font-size="9.5" fill="#fff" opacity="0.45">memorial e cotas</text>
+            <text x="497" y="352" font-family="Inter" font-size="8" fill="#9FE0B8" opacity="0.5">○ aguardando · sem 3</text>
           </g>
 
           <!-- bottom timeline scale -->
-          <g stroke="#9FE0B8" stroke-opacity="0.35" stroke-width="1">
-            <line x1="40" y1="392" x2="620" y2="392"/>
-            <line x1="40" y1="388" x2="40" y2="396"/>
-            <line x1="195" y1="388" x2="195" y2="396"/>
-            <line x1="340" y1="388" x2="340" y2="396"/>
-            <line x1="485" y1="388" x2="485" y2="396"/>
-            <line x1="620" y1="388" x2="620" y2="396"/>
+          <g stroke-width="1">
+            <!-- linha base completa -->
+            <line x1="40" y1="392" x2="620" y2="392" stroke="#9FE0B8" stroke-opacity="0.18"/>
+            <!-- progresso preenchido até semana 2 (cards 1+2 done) -->
+            <line x1="40" y1="392" x2="340" y2="392" stroke="#34D399" stroke-width="2"/>
+            <!-- progresso parcial 2->3 -->
+            <line x1="340" y1="392" x2="410" y2="392" stroke="#34D399" stroke-width="2" stroke-dasharray="2 3" stroke-opacity="0.7"/>
           </g>
-          <g font-family="Maven Pro" font-size="8" font-weight="600" letter-spacing="0.8" fill="#ffffff" opacity="0.4" text-anchor="middle">
-            <text x="40"  y="412">SEM 0</text>
-            <text x="195" y="412">SEM 1</text>
-            <text x="340" y="412">SEM 2</text>
-            <text x="485" y="412">SEM 3</text>
-            <text x="620" y="412">ENTREGA</text>
+          <!-- marker dots -->
+          <g>
+            <circle cx="40"  cy="392" r="4" fill="#34D399"/>
+            <circle cx="195" cy="392" r="4" fill="#34D399"/>
+            <circle cx="340" cy="392" r="4.5" fill="#34D399" stroke="#0a0c0a" stroke-width="1.5">
+              <animate attributeName="r" values="4.5;6;4.5" dur="1.6s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="485" cy="392" r="3.5" fill="none" stroke="#9FE0B8" stroke-opacity="0.4" stroke-width="1.5"/>
+            <circle cx="620" cy="392" r="3.5" fill="none" stroke="#9FE0B8" stroke-opacity="0.4" stroke-width="1.5"/>
+          </g>
+          <g font-family="Maven Pro" font-size="8" font-weight="600" letter-spacing="0.8" text-anchor="middle">
+            <text x="40"  y="412" fill="#34D399" opacity="0.85">SEM 0</text>
+            <text x="195" y="412" fill="#34D399" opacity="0.85">SEM 1</text>
+            <text x="340" y="412" fill="#34D399">SEM 2</text>
+            <text x="485" y="412" fill="#9FE0B8" opacity="0.4">SEM 3</text>
+            <text x="620" y="412" fill="#9FE0B8" opacity="0.4">ENTREGA</text>
           </g>
 
         </svg>

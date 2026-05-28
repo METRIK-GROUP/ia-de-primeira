@@ -386,7 +386,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .cmp-thumb:hover img{opacity:1}
 .cmp-thumb.is-active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(122,175,212,0.32),0 10px 30px rgba(0,0,0,0.4)}
 .cmp-thumb.is-active img{opacity:1}
-.cmp-thumb-label{position:absolute;bottom:5px;left:6px;right:6px;font-family:'Maven Pro',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;text-align:left;text-shadow:0 1px 4px rgba(0,0,0,0.7)}
 .cmp-thumb-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none}
 .cmp-thumb-play::before{content:'';border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #fff;margin-left:2px}
 .rep-stage{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 30px 80px rgba(0,0,0,0.45)}
@@ -681,6 +680,11 @@ footer a:hover{color:#fff}
   .dobra-in{gap:34px}
   #oferta{padding:74px 20px 60px}
   footer{padding:44px 20px}
+
+  /* representação: empilha slider (cima) e vídeo (baixo), sem toggle */
+  .rep-stage{aspect-ratio:auto;display:flex;flex-direction:column;gap:14px;border:0;border-radius:0;box-shadow:none;overflow:visible}
+  .rep-pane{position:relative;opacity:1;visibility:visible;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 18px 44px rgba(0,0,0,0.4)}
+  .rep-thumbs{display:none}
 
   /* hero */
   .hero{padding:102px 20px 70px;min-height:auto}
@@ -1250,12 +1254,10 @@ footer a:hover{color:#fff}
       <div class="cmp-thumbs rep-thumbs" role="tablist" aria-label="Alternar entre comparador e vídeo">
         <button class="cmp-thumb is-active" type="button" role="tab" aria-selected="true" data-target="compare" aria-label="Comparador antes e depois">
           <img src="img/hall-render.jpg" alt="" loading="lazy">
-          <span class="cmp-thumb-label">Comparar</span>
         </button>
         <button class="cmp-thumb" type="button" role="tab" aria-selected="false" data-target="video" aria-label="Vídeo de renders">
           <img src="img/renders-poster.jpg" alt="" loading="lazy">
           <span class="cmp-thumb-play" aria-hidden="true"></span>
-          <span class="cmp-thumb-label">Vídeo</span>
         </button>
       </div>
     </div>
@@ -1778,7 +1780,8 @@ footer a:hover{color:#fff}
       var vio = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
           var active = stage.querySelector('.rep-pane.is-active');
-          if (e.isIntersecting){ if (active && active.dataset.pane === 'video') playVid(); }
+          var stacked = window.matchMedia('(max-width:600px)').matches;
+          if (e.isIntersecting){ if (stacked || (active && active.dataset.pane === 'video')) playVid(); }
           else { video.pause(); }
         });
       }, { threshold: 0.25 });

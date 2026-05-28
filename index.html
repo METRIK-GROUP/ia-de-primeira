@@ -91,11 +91,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 /* ============================================================
    NAV
    ============================================================ */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.65);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100}
+.promo-bar{display:block;text-align:center;background:var(--accent);color:#07101a;font-family:'Maven Pro',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:0.03em;line-height:1.4;padding:9px 16px;transition:background .2s ease}
+.promo-bar:hover{background:#9CC4E0}
+.promo-arrow{display:inline-block;transition:transform .2s ease}
+.promo-bar:hover .promo-arrow{transform:translateX(3px)}
+.nav{position:relative;background:rgba(10,10,10,0.65);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
 .nav-brand{display:inline-flex;align-items:center;font-family:'Maven Pro',sans-serif;font-weight:800;font-size:15px;letter-spacing:0.01em;color:#fff}
 .nav-logo{height:36px;width:auto;display:block}
-.nav-brand span{font-weight:400;color:var(--tx-2);margin-left:8px}
 .nav-cta{display:none;padding:11px 22px;background:#fff;color:#0a0a0a;font-family:'Maven Pro',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:0.04em;border-radius:999px;text-transform:uppercase;transition:transform .25s ease,background .25s ease}
 .nav-cta:hover{background:var(--accent);transform:translateY(-1px)}
 @media(min-width:768px){.nav-cta{display:inline-flex;align-items:center;gap:8px}}
@@ -560,12 +564,15 @@ footer a:hover{color:#fff}
 <!-- ============================================================
      NAV
      ============================================================ -->
-<nav class="nav">
-  <div class="nav-in">
-    <a class="nav-brand" href="#hero"><img class="nav-logo" src="img/logo-iadeprimeira-white.png" width="1149" height="390" alt="IA de Primeira"><span>· Pré-lançamento</span></a>
-    <a class="nav-cta" href="#oferta"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar no grupo VIP</a>
-  </div>
-</nav>
+<header class="site-header">
+  <a class="promo-bar" href="https://sndflw.com/i/R1JxHaVS4YY3PJIQbcOx" target="_blank" rel="noopener">Entre no grupo e receba a oferta de pré-lançamento — no dia 02 (terça-feira) às 07h. <span class="promo-arrow" aria-hidden="true">→</span></a>
+  <nav class="nav">
+    <div class="nav-in">
+      <a class="nav-brand" href="#hero"><img class="nav-logo" src="img/logo-iadeprimeira-white.png" width="1149" height="390" alt="IA de Primeira"></a>
+      <a class="nav-cta" href="#oferta"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar no grupo VIP</a>
+    </div>
+  </nav>
+</header>
 
 <!-- ============================================================
      HERO — Hora de Acelerar

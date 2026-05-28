@@ -164,6 +164,60 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 
 /* ============================================================
+   ECOSSISTEMA — widget orbital vivo
+   ============================================================ */
+.orbit-sec{text-align:center}
+.orbit-sec .label{margin-bottom:18px}
+.orbit-title{font-family:'Maven Pro',sans-serif;font-weight:800;font-size:clamp(26px,4vw,42px);color:#fff;letter-spacing:-0.02em;line-height:1.1;text-wrap:balance}
+.orbit-lede{max-width:560px;margin:18px auto 0;color:var(--tx-2);font-size:clamp(14px,1.7vw,17px);line-height:1.6}
+
+.orbit{position:relative;width:min(540px,86vw);aspect-ratio:1;margin:60px auto 0}
+.orbit-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+
+.ring{fill:none;stroke:#fff;stroke-opacity:0.07;stroke-width:1}
+.ring-2{stroke-opacity:0.045}
+.ring-dash{fill:none;stroke:var(--accent);stroke-opacity:0.2;stroke-width:1.2;stroke-dasharray:2 11;transform-origin:300px 300px;animation:orbitSpin 48s linear infinite}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+
+.conn{stroke-width:1.4;stroke-linecap:round;stroke-opacity:0.26}
+.flow{stroke-width:1.6;stroke-linecap:round;stroke-dasharray:7 64;stroke-dashoffset:71;stroke-opacity:0.95;filter:url(#orbGlow);animation:orbitFlow 2.8s linear infinite}
+@keyframes orbitFlow{to{stroke-dashoffset:0}}
+.flow.f2{animation-delay:.55s}.flow.f3{animation-delay:1.1s}.flow.f4{animation-delay:1.65s}.flow.f5{animation-delay:2.2s}
+.c-doc{stroke:var(--c-doc)}.c-ven{stroke:var(--c-ven)}.c-rep{stroke:var(--c-rep)}.c-ges{stroke:var(--c-ges)}.c-dev{stroke:var(--c-dev)}
+.core-body{fill:rgba(8,12,18,0.92);stroke:var(--accent);stroke-opacity:0.42;stroke-width:1.5}
+
+.orbit-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;display:grid;place-items:center;z-index:2}
+.orbit-core::before{content:'';position:absolute;inset:-28%;border-radius:50%;background:radial-gradient(circle,rgba(122,175,212,0.45),rgba(122,175,212,0) 70%);animation:corePulse 3.4s ease-in-out infinite}
+.orbit-core img{width:66px;height:auto;position:relative;z-index:1;filter:drop-shadow(0 0 10px rgba(122,175,212,0.55))}
+@keyframes corePulse{0%,100%{transform:scale(1);opacity:.65}50%{transform:scale(1.16);opacity:1}}
+
+.orbit-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:3}
+.orbit-dot{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(10,13,18,0.94);border:1px solid color-mix(in srgb,var(--c) 55%,transparent);box-shadow:0 0 0 6px rgba(8,10,14,0.55),0 0 16px -4px var(--c);animation:nodePulse 3.4s ease-in-out infinite}
+.orbit-dot svg{width:24px;height:24px;color:var(--c)}
+.orbit-label{font-family:'Maven Pro',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--tx-2);white-space:nowrap}
+@keyframes nodePulse{0%,100%{box-shadow:0 0 0 6px rgba(8,10,14,0.55),0 0 13px -6px var(--c)}50%{box-shadow:0 0 0 6px rgba(8,10,14,0.55),0 0 22px 0 var(--c)}}
+
+.n-doc{left:50%;top:8%}
+.n-projeto{left:89%;top:37%}
+.n-rep{left:75%;top:84%}
+.n-ges{left:25%;top:84%}
+.n-vendas{left:11%;top:37%}
+.n-projeto .orbit-dot{animation-delay:.6s}.n-rep .orbit-dot{animation-delay:1.2s}.n-ges .orbit-dot{animation-delay:1.8s}.n-vendas .orbit-dot{animation-delay:2.4s}
+
+@media(max-width:560px){
+  .orbit{width:min(320px,88vw);margin-top:40px}
+  .orbit-dot{width:40px;height:40px}
+  .orbit-dot svg{width:17px;height:17px}
+  .orbit-core{width:92px;height:92px}
+  .orbit-core img{width:46px}
+  .orbit-node{gap:6px}
+  .orbit-label{font-size:8px;letter-spacing:0.03em;white-space:normal;max-width:64px;text-align:center;line-height:1.18}
+}
+@media(prefers-reduced-motion:reduce){
+  .ring-dash,.flow,.orbit-core::before,.orbit-dot{animation:none}
+}
+
+/* ============================================================
    4 DOBRAS — área por dobra
    ============================================================ */
 .dobra{padding:120px 24px;position:relative;overflow:hidden;border-top:1px solid var(--line)}
@@ -595,6 +649,57 @@ footer a:hover{color:#fff}
         <span class="hero-area" style="--c:var(--c-ges)"><svg aria-hidden="true"><use href="#i-ges"/></svg>Gestão</span>
         <span class="hero-area" style="--c:var(--c-dev)"><svg aria-hidden="true"><use href="#i-vendas"/></svg>Vendas</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ECOSSISTEMA — widget orbital (esfera viva)
+     ============================================================ -->
+<section class="sec bg-tech orbit-sec" id="ecossistema" aria-label="Ecossistema IA de Primeira">
+  <div class="grain"></div>
+  <div class="si">
+    <span class="label gs">Ecossistema IA de Primeira</span>
+    <h2 class="orbit-title gs">Uma inteligência central, conectada a tudo.</h2>
+    <p class="orbit-lede gs">Documentação, projeto, representação, gestão e vendas. Todas as áreas do escritório girando em torno de um só cérebro de IA.</p>
+
+    <div class="orbit gs" role="img" aria-label="Esfera central IA de Primeira conectada a Documentação, Projeto, Representação, Gestão e Vendas">
+      <svg class="orbit-svg" viewBox="0 0 600 600" aria-hidden="true">
+        <defs>
+          <filter id="orbGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle class="ring ring-1" cx="300" cy="300" r="132"/>
+        <circle class="ring ring-2" cx="300" cy="300" r="196"/>
+        <circle class="ring ring-dash" cx="300" cy="300" r="258"/>
+
+        <!-- base connections (faint) -->
+        <line class="conn c-doc" x1="300" y1="300" x2="300" y2="48"/>
+        <line class="conn c-ven" x1="300" y1="300" x2="540" y2="222"/>
+        <line class="conn c-rep" x1="300" y1="300" x2="448" y2="504"/>
+        <line class="conn c-ges" x1="300" y1="300" x2="152" y2="504"/>
+        <line class="conn c-dev" x1="300" y1="300" x2="60" y2="222"/>
+        <!-- flowing pulse (energy → core) -->
+        <line class="flow c-doc"    x1="300" y1="48"  x2="300" y2="300"/>
+        <line class="flow c-ven f2" x1="540" y1="222" x2="300" y2="300"/>
+        <line class="flow c-rep f3" x1="448" y1="504" x2="300" y2="300"/>
+        <line class="flow c-ges f4" x1="152" y1="504" x2="300" y2="300"/>
+        <line class="flow c-dev f5" x1="60"  y1="222" x2="300" y2="300"/>
+
+        <circle class="core-body" cx="300" cy="300" r="66"/>
+      </svg>
+
+      <div class="orbit-core">
+        <img src="img/icon-iadeprimeira-white.png" alt="IA de Primeira" width="180" height="180">
+      </div>
+
+      <span class="orbit-node n-doc" style="--c:var(--c-doc)"><span class="orbit-dot"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><span class="orbit-label">Documentação</span></span>
+      <span class="orbit-node n-projeto" style="--c:var(--c-ven)"><span class="orbit-dot"><svg aria-hidden="true"><use href="#i-plan"/></svg></span><span class="orbit-label">Projeto</span></span>
+      <span class="orbit-node n-rep" style="--c:var(--c-rep)"><span class="orbit-dot"><svg aria-hidden="true"><use href="#i-rep"/></svg></span><span class="orbit-label">Representação</span></span>
+      <span class="orbit-node n-ges" style="--c:var(--c-ges)"><span class="orbit-dot"><svg aria-hidden="true"><use href="#i-ges"/></svg></span><span class="orbit-label">Gestão</span></span>
+      <span class="orbit-node n-vendas" style="--c:var(--c-dev)"><span class="orbit-dot"><svg aria-hidden="true"><use href="#i-vendas"/></svg></span><span class="orbit-label">Vendas</span></span>
     </div>
   </div>
 </section>

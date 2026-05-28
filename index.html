@@ -98,6 +98,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .nav-cta{display:none;padding:11px 22px;background:#fff;color:#0a0a0a;font-family:'Maven Pro',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:0.04em;border-radius:999px;text-transform:uppercase;transition:transform .25s ease,background .25s ease}
 .nav-cta:hover{background:var(--accent);transform:translateY(-1px)}
 @media(min-width:768px){.nav-cta{display:inline-flex;align-items:center;gap:8px}}
+.nav-cta svg{width:16px;height:16px;flex-shrink:0}
 
 /* ============================================================
    HERO
@@ -124,11 +125,27 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 .hero-cta-row{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:20px}
 .btn-wa-hero{padding:18px 36px;font-size:14.5px}
-.hero-areas{
+.hero-offer-note{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  width:fit-content;margin:0 auto;
   font-family:'Maven Pro',sans-serif;
-  font-size:11.5px;font-weight:600;letter-spacing:0.18em;
+  font-size:11.5px;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--accent);
+}
+.hero-offer-note::before{
+  content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 0 rgba(122,175,212,0.5);animation:pulseDot 2.2s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(122,175,212,0.45)}70%{box-shadow:0 0 0 8px rgba(122,175,212,0)}100%{box-shadow:0 0 0 0 rgba(122,175,212,0)}}
+.hero-areas{
+  margin-top:2px;
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:10px 20px;
+  font-family:'Maven Pro',sans-serif;
+  font-size:11.5px;font-weight:600;letter-spacing:0.14em;
   text-transform:uppercase;color:var(--tx-3);
 }
+.hero-area{display:inline-flex;align-items:center;gap:7px}
+.hero-area svg{width:15px;height:15px;color:var(--c);flex-shrink:0}
 
 /* ============================================================
    4 DOBRAS — área por dobra
@@ -518,6 +535,10 @@ footer a:hover{color:#fff}
     <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5.5a1.5 1.5 0 0 1 0-3H20"/></symbol>
     <symbol id="i-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.92.55 3.81 1.6 5.43L2 22l4.84-1.59a9.9 9.9 0 0 0 5.2 1.42h.01c5.46 0 9.91-4.45 9.91-9.92 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm0 1.83a8.07 8.07 0 0 1 8.08 8.08c0 4.46-3.62 8.08-8.08 8.08-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.13 1.03 1.04-3.04-.2-.32a8.04 8.04 0 0 1-1.23-4.41c0-4.46 3.62-8.08 8.07-8.08zm-4.83 3.94c-.22 0-.58.08-.88.41-.3.32-1.16 1.13-1.16 2.76 0 1.63 1.19 3.2 1.36 3.42.16.22 2.34 3.74 5.73 5.08 2.81 1.11 3.38.89 3.99.83.61-.05 1.96-.8 2.24-1.57.28-.77.28-1.43.2-1.57-.08-.13-.3-.21-.63-.38-.33-.16-1.96-.97-2.27-1.08-.3-.11-.52-.16-.74.16-.22.32-.85 1.08-1.04 1.3-.19.22-.38.24-.71.08-.33-.16-1.39-.51-2.65-1.63a9.86 9.86 0 0 1-1.83-2.27c-.19-.32-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.21-.32.33-.54.11-.22.05-.41-.03-.57-.08-.16-.72-1.79-1.02-2.44-.26-.55-.51-.55-.71-.55h-.7z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></symbol>
+    <symbol id="i-dev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+    <symbol id="i-rep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
+    <symbol id="i-ges" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20.5" x2="20" y2="20.5"/><rect x="5" y="11" width="3.4" height="8"/><rect x="10.3" y="6.5" width="3.4" height="12.5"/><rect x="15.6" y="14" width="3.4" height="5"/></symbol>
   </defs>
 </svg>
 
@@ -527,7 +548,7 @@ footer a:hover{color:#fff}
 <nav class="nav">
   <div class="nav-in">
     <a class="nav-brand" href="#hero">IA de Primeira<span>· METRIK Instituto</span></a>
-    <a class="nav-cta" href="#oferta">Entrar no grupo VIP</a>
+    <a class="nav-cta" href="#oferta"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar no grupo VIP</a>
   </div>
 </nav>
 
@@ -537,6 +558,7 @@ footer a:hover{color:#fff}
 <section class="sec bg-tech hero" id="hero" aria-label="Hora de acelerar">
   <div class="grain"></div>
   <div class="si">
+    <span class="hero-offer-note gs">Oferta exclusiva · abre terça 02/06 às 7h</span>
     <span class="label gs">Hora de acelerar</span>
     <h1 class="gs">
       O escritório que você sempre quis, <span class="soft">agora com IA.</span>
@@ -549,7 +571,12 @@ footer a:hover{color:#fff}
         <svg aria-hidden="true"><use href="#i-wa"/></svg>
         Entrar no grupo VIP
       </a>
-      <p class="hero-areas">Documentação · Desenvolvimento · Representação · Gestão</p>
+      <div class="hero-areas">
+        <span class="hero-area" style="--c:var(--c-doc)"><svg aria-hidden="true"><use href="#i-doc"/></svg>Documentação</span>
+        <span class="hero-area" style="--c:var(--c-dev)"><svg aria-hidden="true"><use href="#i-dev"/></svg>Desenvolvimento</span>
+        <span class="hero-area" style="--c:var(--c-rep)"><svg aria-hidden="true"><use href="#i-rep"/></svg>Representação</span>
+        <span class="hero-area" style="--c:var(--c-ges)"><svg aria-hidden="true"><use href="#i-ges"/></svg>Gestão</span>
+      </div>
     </div>
   </div>
 </section>
@@ -564,11 +591,6 @@ footer a:hover{color:#fff}
       <span class="dobra-num gs">01 · Documentação</span>
       <h2 class="dobra-title gs">A documentação do escritório, escrita por IA.</h2>
       <p class="dobra-lede gs">Crie a documentação completa do seu método, dos seus processos e dos materiais que sustentam o dia a dia do escritório, sem começar do zero.</p>
-      <ul class="dobra-bullets gs">
-        <li>Briefing, contrato e cronograma no seu padrão</li>
-        <li>Memoriais e proposta gerados em minutos</li>
-        <li>Manuais internos e processos sempre atualizados</li>
-      </ul>
     </div>
     <div class="mock gs" style="padding:0;background:transparent;border:0;box-shadow:none">
       <div class="flowchart-mockup" id="flowchart-anim">
@@ -671,7 +693,7 @@ footer a:hover{color:#fff}
     <div class="dobra-text">
       <span class="dobra-num gs">02 · Desenvolvimento</span>
       <h2 class="dobra-title gs">Do briefing aos executivos, com IA em cada etapa.</h2>
-      <p class="dobra-lede gs">Desenvolva projetos de interiores com IA acelerando cada etapa do fluxo: layout, criação, apresentação e detalhamento.</p>
+      <p class="dobra-lede gs">Veja como usar IA para acelerar cada etapa do desenvolvimento do projeto: layout, criação, apresentação e detalhamento.</p>
       <ul class="dobra-bullets gs">
         <li>Layout e estudo volumétrico em horas, não dias</li>
         <li>Apresentação aprovada em 2 reuniões, sem alterações</li>
@@ -716,7 +738,7 @@ footer a:hover{color:#fff}
             <circle cx="0" cy="8" r="4" fill="#34D399">
               <animate attributeName="opacity" values="1;0.4;1" dur="1.4s" repeatCount="indefinite"/>
             </circle>
-            <text x="12" y="12" font-family="Maven Pro" font-size="11" font-weight="700" letter-spacing="1.4" fill="#9FE0B8">FLUXO DE PROJETO</text>
+            <text x="12" y="12" font-family="Maven Pro" font-size="11" font-weight="700" letter-spacing="1.4" fill="#9FE0B8">PROCESSO DE PROJETO</text>
             <text x="142" y="12" font-family="Inter" font-size="9" fill="#fff" opacity="0.45">· semana 2 de 4</text>
           </g>
           <!-- progress bar mini -->
@@ -962,7 +984,7 @@ footer a:hover{color:#fff}
   <div class="dobra-in">
     <div class="dobra-text">
       <span class="dobra-num gs">03 · Representação</span>
-      <h2 class="dobra-title gs">Imagens e vídeos profissionais, prontos para apresentar.</h2>
+      <h2 class="dobra-title gs">Imagens, vídeos e apresentações profissionais.</h2>
       <p class="dobra-lede gs">Gere imagens e vídeos fotorrealistas para apresentar e aprovar projetos sem alterações, direto do seu software de projeto ou em fluxos automatizados.</p>
       <ul class="dobra-bullets gs">
         <li>Render fotorrealista em segundos, sem render farm</li>
@@ -1010,7 +1032,7 @@ footer a:hover{color:#fff}
   <div class="dobra-in">
     <div class="dobra-text">
       <span class="dobra-num gs">04 · Gestão</span>
-      <h2 class="dobra-title gs">A gestão do escritório operada por IA.</h2>
+      <h2 class="dobra-title gs">Gestão do escritório com IA.</h2>
       <p class="dobra-lede gs">IA aplicada à gestão, otimização de rotinas e automação das tarefas operacionais que consomem seu dia, para você voltar a projetar.</p>
       <ul class="dobra-bullets gs">
         <li>Agentes que respondem cliente, agendam e organizam</li>
@@ -1399,7 +1421,7 @@ footer a:hover{color:#fff}
       <div class="desafio-head">
         <span class="label">Bônus exclusivo dessa turma</span>
         <h2>Desafio de Implementação IA.</h2>
-        <p class="lede">Quatro encontros ao vivo, toda sexta. Você acompanha o sprint em grupo, implementa no escritório durante a semana e volta no encontro seguinte com o trabalho feito. No fim das quatro semanas, a IA já está dentro do dia a dia do escritório, em todas as etapas do seu processo, do briefing até a obra.</p>
+        <p class="lede">Quatro encontros ao vivo, toda quarta. Você acompanha o sprint em grupo, implementa no escritório durante a semana e volta no encontro seguinte com o trabalho feito. No fim das quatro semanas, a IA já está dentro do dia a dia do escritório, em todas as etapas do seu processo, do briefing até a obra.</p>
       </div>
 
       <div class="sprint-grid">
@@ -1407,7 +1429,7 @@ footer a:hover{color:#fff}
           <div class="sprint-head">
             <span class="sprint-num">Encontro 01</span>
           </div>
-          <h3 class="sprint-title">Sex · 29/05</h3>
+          <h3 class="sprint-title">Qua · 03/06</h3>
           <span class="sprint-tag">ao vivo · 10h às 12h</span>
         </article>
 
@@ -1415,7 +1437,7 @@ footer a:hover{color:#fff}
           <div class="sprint-head">
             <span class="sprint-num">Encontro 02</span>
           </div>
-          <h3 class="sprint-title">Sex · 05/06</h3>
+          <h3 class="sprint-title">Qua · 10/06</h3>
           <span class="sprint-tag">ao vivo · 10h às 12h</span>
         </article>
 
@@ -1423,7 +1445,7 @@ footer a:hover{color:#fff}
           <div class="sprint-head">
             <span class="sprint-num">Encontro 03</span>
           </div>
-          <h3 class="sprint-title">Sex · 12/06</h3>
+          <h3 class="sprint-title">Qua · 17/06</h3>
           <span class="sprint-tag">ao vivo · 10h às 12h</span>
         </article>
 
@@ -1431,7 +1453,7 @@ footer a:hover{color:#fff}
           <div class="sprint-head">
             <span class="sprint-num">Encontro 04</span>
           </div>
-          <h3 class="sprint-title">Sex · 19/06</h3>
+          <h3 class="sprint-title">Qua · 24/06</h3>
           <span class="sprint-tag">ao vivo · 10h às 12h</span>
         </article>
       </div>
@@ -1450,7 +1472,7 @@ footer a:hover{color:#fff}
   <div class="si">
     <div class="offer-card gs">
       <span class="label">Pré-lançamento · vagas limitadas</span>
-      <h2>Inscrições abrem quinta, 28 de maio, às 12h.</h2>
+      <h2>Inscrições abrem terça, 2 de junho, às 7h.</h2>
       <p class="sub">Entre no grupo VIP no WhatsApp e seja avisado em primeira mão. Quem está no grupo entra antes e garante condições exclusivas de lançamento.</p>
 
       <div class="count" id="count" aria-live="polite">
@@ -1595,8 +1617,8 @@ footer a:hover{color:#fff}
     obs.observe(container);
   })();
 
-  // ===== countdown — Qui 28/05/2026 12:00 BRT (15:00 UTC) =====
-  var TARGET = Date.UTC(2026, 4, 28, 15, 0, 0); // mês 4 = maio (0-index)
+  // ===== countdown — Ter 02/06/2026 07:00 BRT (10:00 UTC) =====
+  var TARGET = Date.UTC(2026, 5, 2, 10, 0, 0); // mês 5 = junho (0-index)
   var d = document.getElementById('c-d');
   var h = document.getElementById('c-h');
   var m = document.getElementById('c-m');

@@ -127,7 +127,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .btn-wa-hero{padding:18px 36px;font-size:14.5px}
 .hero-offer-note{
   display:flex;align-items:center;justify-content:center;gap:11px;
-  width:fit-content;margin:0 auto 26px;
+  width:fit-content;margin:0 auto 26px;padding:9px 20px;border-radius:999px;
+  background:color-mix(in srgb,var(--accent) 11%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);
   font-family:'Maven Pro',sans-serif;
   font-size:clamp(13px,1.6vw,15.5px);font-weight:700;letter-spacing:0.08em;
   text-transform:uppercase;color:var(--accent);
@@ -139,13 +141,25 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .hero-areas{
   margin-top:6px;
   display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
-  gap:12px 26px;
+  gap:6px 14px;
   font-family:'Maven Pro',sans-serif;
-  font-size:12.5px;font-weight:600;letter-spacing:0.12em;
+  font-size:13px;font-weight:600;letter-spacing:0.12em;
   text-transform:uppercase;color:var(--tx-2);
 }
-.hero-area{display:inline-flex;align-items:center;gap:9px}
-.hero-area svg{width:22px;height:22px;color:var(--c);flex-shrink:0}
+.hero-area{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:7px 13px;border-radius:999px;
+  transition:transform .2s ease-out,color .2s ease-out,background .2s ease-out;
+}
+.hero-area svg{width:24px;height:24px;color:var(--c);flex-shrink:0;transition:filter .2s ease-out}
+@media(hover:hover){
+  .hero-area:hover{transform:translateY(-2px);color:#fff;background:color-mix(in srgb,var(--c) 12%,transparent)}
+  .hero-area:hover svg{filter:drop-shadow(0 0 6px var(--c))}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-area,.hero-area svg{transition:none}
+  .hero-area:hover{transform:none}
+}
 
 /* ============================================================
    4 DOBRAS — área por dobra

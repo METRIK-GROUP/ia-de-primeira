@@ -186,9 +186,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .c-doc{stroke:var(--c-doc)}.c-ven{stroke:var(--c-ven)}.c-rep{stroke:var(--c-rep)}.c-ges{stroke:var(--c-ges)}.c-dev{stroke:var(--c-dev)}
 .core-body{fill:rgba(8,12,18,0.92);stroke:var(--accent);stroke-opacity:0.42;stroke-width:1.5}
 
-.orbit-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;display:grid;place-items:center;z-index:2}
-.orbit-core::before{content:'';position:absolute;inset:-28%;border-radius:50%;background:radial-gradient(circle,rgba(122,175,212,0.45),rgba(122,175,212,0) 70%);animation:corePulse 3.4s ease-in-out infinite}
-.orbit-core img{width:66px;height:auto;position:relative;z-index:1;filter:drop-shadow(0 0 10px rgba(122,175,212,0.55))}
+.orbit-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:188px;height:188px;border-radius:50%;display:grid;place-items:center;z-index:2}
+.orbit-core::before{content:'';position:absolute;inset:-24%;border-radius:50%;background:radial-gradient(circle,rgba(122,175,212,0.45),rgba(122,175,212,0) 70%);animation:corePulse 3.4s ease-in-out infinite}
+.orbit-core img{width:100px;height:auto;position:relative;z-index:1;filter:drop-shadow(0 0 12px rgba(122,175,212,0.55))}
 @keyframes corePulse{0%,100%{transform:scale(1);opacity:.65}50%{transform:scale(1.16);opacity:1}}
 
 .orbit-node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:9px;z-index:3}
@@ -208,8 +208,8 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
   .orbit{width:min(320px,88vw);margin-top:40px}
   .orbit-dot{width:40px;height:40px}
   .orbit-dot svg{width:17px;height:17px}
-  .orbit-core{width:92px;height:92px}
-  .orbit-core img{width:46px}
+  .orbit-core{width:132px;height:132px}
+  .orbit-core img{width:70px}
   .orbit-node{gap:6px}
   .orbit-label{font-size:8px;letter-spacing:0.03em;white-space:normal;max-width:64px;text-align:center;line-height:1.18}
 }
@@ -660,7 +660,7 @@ footer a:hover{color:#fff}
   <div class="grain"></div>
   <div class="si">
     <span class="label gs">Ecossistema IA de Primeira</span>
-    <h2 class="orbit-title gs">Uma inteligência central, conectada a tudo.</h2>
+    <h2 class="orbit-title gs">Muito além de imagens e videozinhos...</h2>
     <p class="orbit-lede gs">Documentação, projeto, representação, gestão e vendas. Todas as áreas do escritório girando em torno de um só cérebro de IA.</p>
 
     <div class="orbit gs" role="img" aria-label="Esfera central IA de Primeira conectada a Documentação, Projeto, Representação, Gestão e Vendas">
@@ -688,7 +688,7 @@ footer a:hover{color:#fff}
         <line class="flow c-ges f4" x1="152" y1="504" x2="300" y2="300"/>
         <line class="flow c-dev f5" x1="60"  y1="222" x2="300" y2="300"/>
 
-        <circle class="core-body" cx="300" cy="300" r="66"/>
+        <circle class="core-body" cx="300" cy="300" r="94"/>
       </svg>
 
       <div class="orbit-core">

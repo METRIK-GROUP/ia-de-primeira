@@ -12,7 +12,12 @@ name: Publicar lancamento IA de Primeira
 
 on:
   schedule:
-    - cron: '30 9 2 6 *'   # 06:30 BRT, 02/06/2026
+    # 3 horários de redundância (UTC). Se o cron do GitHub atrasar/pular um,
+    # outro pega. Merge é idempotente: depois de publicado, as outras execucoes
+    # viram "Already up to date" e nao fazem nada. Todos antes das 07h BRT.
+    - cron: '15 9 2 6 *'   # 06:15 BRT
+    - cron: '30 9 2 6 *'   # 06:30 BRT
+    - cron: '45 9 2 6 *'   # 06:45 BRT
   workflow_dispatch: {}
 
 permissions:

@@ -1,0 +1,36 @@
+name: Publicar lancamento IA de Primeira
+
+# Publica o lancamento sozinho, na nuvem do GitHub (nao depende do PC do Rafael).
+# Faz isso jogando a branch `launch` na `main` no horario marcado.
+# Como o GitHub Pages publica direto da `main`, o site atualiza em ~1-2 min.
+# A oferta continua escondida pela trava de hora-do-servidor e abre 07h:00 cravado.
+#
+# Horario: cron roda em UTC. 09:30 UTC = 06:30 BRT de 02/06.
+# Escolhido cedo de proposito: o agendador do GitHub pode atrasar alguns minutos,
+# entao publicar ~06:30-06:55 deixa o site no ar com folga antes das 07h.
+# Tambem da pra disparar na mao em Actions > Run workflow (workflow_dispatch).
+
+on:
+  schedule:
+    - cron: '30 9 2 6 *'   # 06:30 BRT, 02/06/2026
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Jogar launch na main (publica o site)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin launch
+          git merge --ff-only origin/launch
+          git push origin main

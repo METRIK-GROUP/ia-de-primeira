@@ -171,7 +171,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .urgency-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:101;background:#b91c1c;color:#fff;text-align:center;font-family:'Maven Pro',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.02em;padding:0 16px;height:38px;align-items:center;justify-content:center;gap:10px}
 .urgency-bar-dot{width:8px;height:8px;background:#fca5a5;border-radius:50%;animation:ubPulse 1.4s ease-in-out infinite;flex-shrink:0}
 @keyframes ubPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
-.urgency-bar-timer{font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:0.04em}
 body.launch-open .urgency-bar{display:flex}
 body.launch-open .nav{top:38px}
 @media(max-width:600px){.urgency-bar{font-size:11.5px;gap:7px}.urgency-bar-dot{width:6px;height:6px}}
@@ -823,9 +822,9 @@ footer a:hover{color:#fff}
 <!-- ============================================================
      URGENCY BAR (só aparece com body.launch-open)
      ============================================================ -->
-<div class="urgency-bar" id="urgencyBar" role="status" aria-live="polite">
+<div class="urgency-bar" role="status">
   <span class="urgency-bar-dot" aria-hidden="true"></span>
-  <span>Últimas vagas — inscrições encerram em <span class="urgency-bar-timer" id="ubTimer">––:––:––</span></span>
+  <span>Últimas vagas da primeira turma — garanta a sua antes que feche.</span>
 </div>
 
 <!-- ============================================================
@@ -2343,24 +2342,6 @@ footer a:hover{color:#fff}
   setInterval(syncServerTime, 60000); // re-sincroniza a cada 1 min (anti-drift)
 })();
 
-/* ── URGENCY BAR countdown ── meia-noite BRT = 03:00 UTC 03/06 ── */
-(function(){
-  var CLOSE = Date.UTC(2026,5,3,3,0,0); // 03/06/2026 00:00 BRT
-  var el = document.getElementById('ubTimer');
-  if (!el) return;
-  function pad(n){return String(n).padStart(2,'0')}
-  function ubTick(){
-    var now = Date.now();
-    var diff = CLOSE - now;
-    if (diff <= 0){ el.textContent = '00:00:00'; return; }
-    var h = Math.floor(diff/3600000);
-    var m = Math.floor((diff%3600000)/60000);
-    var s = Math.floor((diff%60000)/1000);
-    el.textContent = pad(h)+':'+pad(m)+':'+pad(s);
-  }
-  ubTick();
-  setInterval(ubTick, 1000);
-})();
 </script>
 
 </body>

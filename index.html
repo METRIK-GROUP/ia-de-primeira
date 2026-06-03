@@ -7,13 +7,13 @@
 <meta name="color-scheme" content="dark">
 
 <title>IA de Primeira | Implementação de IA no escritório de arquitetura | METRIK Instituto</title>
-<meta name="description" content="O curso que ensina arquitetos e designers de interiores a usar IA de verdade no escritório. Documentação, desenvolvimento, representação e gestão. Pré-lançamento aberto.">
+<meta name="description" content="O curso que ensina arquitetos e designers de interiores a usar IA de verdade no escritório. Documentação, desenvolvimento, representação e gestão. Matrículas encerradas.">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="IA de Primeira | IA aplicada ao seu escritório de arquitetura">
-<meta property="og:description" content="Documentação, desenvolvimento, representação e gestão com IA. Pré-lançamento aberto.">
+<meta property="og:description" content="Documentação, desenvolvimento, representação e gestão com IA. Matrículas encerradas — próxima turma em breve.">
 <meta property="og:site_name" content="METRIK Instituto">
 <meta property="og:url" content="https://iadeprimeira.rodrigorosar.com.br/">
 <meta property="og:image" content="https://iadeprimeira.rodrigorosar.com.br/img/og-cover.png">
@@ -73,9 +73,8 @@
       },
       "offers": {
         "@type": "Offer",
-        "category": "Pré-lançamento",
-        "availability": "https://schema.org/PreOrder",
-        "availabilityStarts": "2026-06-02T07:00:00-03:00",
+        "category": "Primeira turma",
+        "availability": "https://schema.org/SoldOut",
         "url": "https://iadeprimeira.rodrigorosar.com.br/"
       }
     },
@@ -171,8 +170,9 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .urgency-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:101;background:#b91c1c;color:#fff;text-align:center;font-family:'Maven Pro',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.02em;padding:0 16px;height:38px;align-items:center;justify-content:center;gap:10px}
 .urgency-bar-dot{width:8px;height:8px;background:#fca5a5;border-radius:50%;animation:ubPulse 1.4s ease-in-out infinite;flex-shrink:0}
 @keyframes ubPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
-body.launch-open .urgency-bar{display:flex}
-body.launch-open .nav{top:38px}
+/* urgency bar desativada (matrículas encerradas) */
+/* body.launch-open .urgency-bar{display:flex} */
+/* body.launch-open .nav{top:38px} */
 @media(max-width:600px){.urgency-bar{font-size:11.5px;gap:7px}.urgency-bar-dot{width:6px;height:6px}}
 @media(prefers-reduced-motion:reduce){.urgency-bar-dot{animation:none}}
 
@@ -687,14 +687,15 @@ body.launch-open .offer-open{display:block}
 body.launch-open .hero-note-pre{display:none}
 body.launch-open .hero-note-open{display:inline-flex}
 body.launch-open .btn-wa-hero{display:none}
-body.launch-open .btn-checkout.hero-checkout{display:inline-flex}
+/* body.launch-open .btn-checkout.hero-checkout{display:inline-flex} */
+body.launch-open .badge-encerrado{display:inline-flex}
 .nav-txt-open{display:none}
 body.launch-open .nav-txt-pre{display:none}
 body.launch-open .nav-txt-open{display:inline}
-/* botão da barra do topo: pré (grupo VIP) → aberto (checkout). Mantém desktop-only. */
+/* nav-cta desativado (matrículas encerradas) */
 .nav-cta.nav-cta-open{display:none}
 body.launch-open .nav-cta.nav-cta-pre{display:none}
-@media(min-width:768px){ body.launch-open .nav-cta.nav-cta-open{display:inline-flex} }
+/* body.launch-open .nav-cta.nav-cta-open{display:inline-flex} — encerrado */
 
 /* vídeo do Rodrigo na hero — DESATIVADO por ora (vídeo ainda não pronto).
    Fica escondido sempre. Pra reativar quando tiver o vídeo, descomentar a 2ª linha: */
@@ -737,6 +738,18 @@ body.launch-open .nav-cta.nav-cta-pre{display:none}
   50%{box-shadow:0 14px 52px rgba(122,175,212,0.62)}
 }
 @media(prefers-reduced-motion:reduce){ .btn-checkout{animation:none} }
+
+/* badge matrículas encerradas (hero) */
+.badge-encerrado{
+  display:none;
+  align-items:center;gap:10px;
+  padding:14px 28px;
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:999px;
+  font-family:'Maven Pro',sans-serif;font-weight:700;
+  font-size:13.5px;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--tx-3);
+}
 
 /* stack de valor (o que está incluso) */
 .offer-stack{list-style:none;max-width:460px;margin:4px auto 26px;text-align:left;display:grid;gap:13px}
@@ -849,7 +862,7 @@ footer a:hover{color:#fff}
      ============================================================ -->
 <nav class="nav">
   <div class="nav-in">
-    <a class="nav-brand" href="#hero"><span class="nav-txt-pre">Entre no grupo e receba a oferta de pré-lançamento, dia 02/06 às 07h.</span><span class="nav-txt-open">As inscrições estão abertas — garanta sua vaga agora.</span></a>
+    <a class="nav-brand" href="#hero"><span class="nav-txt-pre">Entre no grupo e receba a oferta de pré-lançamento, dia 02/06 às 07h.</span><span class="nav-txt-open">Matrículas encerradas · a primeira turma já está no ar.</span></a>
     <a class="nav-cta nav-cta-pre" href="#oferta"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar no grupo VIP</a>
     <a class="nav-cta nav-cta-open" href="#oferta">Garantir minha vaga</a>
   </div>
@@ -863,7 +876,7 @@ footer a:hover{color:#fff}
   <div class="si">
     <img class="hero-logo gs" src="img/logo-iadeprimeira-white.png" width="1149" height="390" alt="IA de Primeira">
     <span class="hero-offer-note hero-note-pre gs">Oferta exclusiva · abre terça 02/06 às 07h</span>
-    <span class="hero-offer-note hero-note-open gs">Inscrições abertas · vagas limitadas</span>
+    <span class="hero-offer-note hero-note-open gs">Matrículas encerradas · primeira turma</span>
     <h1 class="gs">
       O escritório que você sempre quis, <span class="soft">agora com IA.</span>
     </h1>
@@ -887,9 +900,7 @@ footer a:hover{color:#fff}
         <svg aria-hidden="true"><use href="#i-wa"/></svg>
         Entrar no grupo VIP
       </a>
-      <a class="btn-checkout hero-checkout js-checkout" href="#" target="_blank" rel="noopener" data-checkout-pendente="true">
-        Garantir minha vaga
-      </a>
+      <span class="badge-encerrado">Matrículas encerradas</span>
       <div class="hero-areas">
         <span class="hero-area" style="--c:var(--c-doc)"><svg aria-hidden="true"><use href="#i-doc"/></svg>Documentação</span>
         <span class="hero-area" style="--c:var(--c-dev)"><svg aria-hidden="true"><use href="#i-plan"/></svg>Projeto</span>
@@ -2056,21 +2067,10 @@ footer a:hover{color:#fff}
 
       <!-- ===== A PARTIR das 07h (revelado pelo countdown) ===== -->
       <div class="offer-open">
-        <span class="label">Oferta exclusiva de pré-lançamento</span>
-        <h2>Garanta sua vaga na primeira turma.</h2>
-
-        <div class="offer-price">
-          <span class="price-anchor">de <s>R$ 2.997</s> por</span>
-          <span class="price-label">12x de</span>
-          <span class="price-main">R$ 206,54</span>
-          <span class="price-note">ou <strong>R$ 1.997</strong> à vista no PIX · <span class="price-off">15% de desconto</span></span>
-        </div>
-
-        <a class="btn-checkout js-checkout" href="#" id="cta-checkout" target="_blank" rel="noopener" data-checkout-pendente="true">
-          Garantir minha vaga
-        </a>
-
-        <p class="offer-foot">Vagas limitadas · garanta a sua antes de esgotar</p>
+        <span class="label">Primeira turma · encerrada</span>
+        <h2>Matrículas encerradas.</h2>
+        <p class="sub">A primeira turma do IA de Primeira já está no ar. Em breve abrimos a próxima turma — fique de olho.</p>
+        <p class="offer-foot">Acompanhe as novidades pelo Instagram do METRIK Instituto.</p>
       </div>
 
     </div>

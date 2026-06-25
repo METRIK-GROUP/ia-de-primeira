@@ -727,17 +727,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .wl-error{font-size:12.5px;color:#F0A593;min-height:0;line-height:1.4;padding-left:2px}
 /* honeypot — fora da tela, invisível pra humanos */
 .wl-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
-.wl-consent{display:flex;align-items:flex-start;gap:10px;margin-top:2px}
-.wl-consent input{
-  appearance:none;-webkit-appearance:none;flex-shrink:0;
-  width:20px;height:20px;margin-top:1px;border-radius:6px;cursor:pointer;
-  border:1px solid var(--line-strong);background:rgba(0,0,0,0.4);
-  display:grid;place-content:center;transition:background .2s ease,border-color .2s ease;
-}
-.wl-consent input:checked{background:var(--accent);border-color:var(--accent)}
-.wl-consent input:checked::after{content:'';width:6px;height:11px;border:solid #06212f;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
-.wl-consent input:focus-visible{outline:2px solid rgba(122,175,212,0.6);outline-offset:2px}
-.wl-consent label{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.5;color:var(--tx-2);text-transform:none;letter-spacing:0;cursor:pointer;font-weight:400}
 .wl-submit{margin-top:8px;width:100%}
 .wl-spinner{width:18px;height:18px;border:2.5px solid rgba(6,33,47,0.35);border-top-color:#06212f;border-radius:50%;animation:wlSpin .7s linear infinite}
 @keyframes wlSpin{to{transform:rotate(360deg)}}
@@ -2151,11 +2140,6 @@ footer a:hover{color:#fff}
           <input type="text" id="wl-website" name="website" tabindex="-1" autocomplete="off">
         </div>
 
-        <div class="wl-consent">
-          <input type="checkbox" id="wl-consent" name="consent" required>
-          <label for="wl-consent">Autorizo o METRIK Instituto a entrar em contato por e-mail e WhatsApp sobre a abertura da turma.</label>
-        </div>
-
         <div class="wl-error" id="wl-error" role="alert" aria-live="assertive"></div>
 
         <button class="btn-primary wl-submit" type="submit" id="wl-submit">
@@ -2450,7 +2434,6 @@ footer a:hover{color:#fff}
   var nome   = document.getElementById('wl-nome');
   var email  = document.getElementById('wl-email');
   var wa     = document.getElementById('wl-whatsapp');
-  var consent= document.getElementById('wl-consent');
   var hp     = document.getElementById('wl-website');
 
   function showError(msg, field){
@@ -2493,8 +2476,6 @@ footer a:hover{color:#fff}
     if (!vNome)              { return showError('Informe seu nome.', nome); }
     if (!EMAIL_RE.test(vEmail)) { return showError('Informe um e-mail válido.', email); }
     if (vWa.length < 10)     { return showError('Informe um WhatsApp válido com DDD.', wa); }
-    if (!consent.checked)    { return showError('Confirme a autorização para continuar.'); }
-
     showError('');
     loading(true);
 

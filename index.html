@@ -511,6 +511,12 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
    SKILLS — O que você recebe · IA
    ============================================================ */
 #skills{--c-accent:#ED8662;--c-accent-soft:rgba(237,134,98,0.16)}
+/* mobile: etiqueta → órbita → texto; desktop: duas colunas como as dobras */
+.skills-in{grid-template-areas:"num" "visual" "text";gap:26px}
+.skills-in > .dobra-num{grid-area:num;margin:0}
+.skills-in > .skills-visual{grid-area:visual}
+.skills-in > .dobra-text{grid-area:text}
+@media(min-width:980px){.skills-in{grid-template-areas:"num visual" "text visual";grid-template-columns:1fr 1.05fr;gap:18px 80px;align-items:start}.skills-in > .skills-visual{align-self:center}}
 #skills .dobra-lede strong{color:#fff}
 .skills-checks{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
 @media(min-width:520px){.skills-checks{grid-template-columns:1fr 1fr}}
@@ -2158,9 +2164,9 @@ footer a:hover{color:#fff}
      ============================================================ -->
 <section class="sec bg-tech dobra" id="skills" aria-label="O que você recebe: skills de IA prontas">
   <div class="grain"></div>
-  <div class="dobra-in">
+  <div class="dobra-in skills-in">
+    <span class="dobra-num gs">O que você recebe</span>
     <div class="dobra-text">
-      <span class="dobra-num gs">O que você recebe</span>
       <h2 class="dobra-title gs">As skills prontas que colocam a IA para trabalhar no seu padrão.</h2>
       <p class="dobra-lede gs">São <strong>mais de 30 skills prontas</strong>, com o <strong>Workspace IA</strong> do escritório já estruturado, templates e guia operacional passo a passo: você instala as soluções e usa no seu padrão, sem depender de horas de estudo.</p>
       <div class="skills-checks gs">

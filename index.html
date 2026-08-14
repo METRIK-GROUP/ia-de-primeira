@@ -508,6 +508,52 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .ft-img-slot img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ============================================================
+   DEPOIMENTOS — Desafio IA de Primeira T1
+   ============================================================ */
+#depoimentos{padding:140px 24px}
+#depoimentos .label{margin-bottom:16px;display:block;width:fit-content;margin-left:auto;margin-right:auto}
+#depoimentos h2{
+  font-family:'Maven Pro',sans-serif;
+  font-weight:800;
+  font-size:clamp(28px,4.5vw,44px);
+  line-height:1.12;
+  color:#fff;
+  max-width:760px;
+  margin:0 auto 18px;
+  text-wrap:balance;
+  text-align:center;
+}
+.depo-sub{font-size:clamp(14px,1.7vw,17px);color:var(--tx-2);max-width:680px;margin:0 auto 64px;line-height:1.6;text-align:center}
+.depo-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:1180px;margin:0 auto}
+@media(min-width:900px){.depo-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+.depo-card{
+  position:relative;padding:24px;
+  border:1px solid rgba(122,175,212,0.2);
+  border-radius:20px;
+  background:linear-gradient(165deg,rgba(122,175,212,0.08) 0%,rgba(18,26,38,0.6) 65%);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  display:flex;flex-direction:column;gap:16px;
+  transition:border-color .3s ease,transform .4s cubic-bezier(.16,1,.3,1);
+}
+.depo-card:hover{border-color:rgba(122,175,212,0.4);transform:translateY(-4px)}
+.depo-video{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;cursor:pointer;border:1px solid rgba(255,255,255,0.08)}
+.depo-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.depo-play{
+  position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:999px;
+  background:rgba(10,10,10,0.35);border:1.5px solid rgba(255,255,255,0.75);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s;
+  pointer-events:none;filter:drop-shadow(0 4px 18px rgba(0,0,0,0.55));z-index:2;
+}
+.depo-play svg{width:18px;height:18px;fill:#fff;margin-left:3px}
+.depo-video:hover .depo-play{transform:scale(1.08);border-color:#fff}
+.depo-video.playing .depo-play,.depo-video.playing .depo-thumb{display:none}
+.depo-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.depo-qt{font-size:15px;color:var(--tx-1);line-height:1.6;flex:1}
+.depo-qt strong{color:#fff}
+.depo-nm{font-family:'Maven Pro',sans-serif;font-weight:700;font-size:13px;color:var(--tx-2);border-top:1px solid var(--line);padding-top:14px}
+
+/* ============================================================
    BÔNUS — DESAFIO IA (4 sprints ao vivo)
    ============================================================ */
 #desafio{padding:140px 24px;position:relative}
@@ -2094,6 +2140,45 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- ============================================================
+     DEPOIMENTOS — Desafio IA de Primeira T1
+     ============================================================ -->
+<section class="sec bg-tech" id="depoimentos" aria-label="Depoimentos de alunos">
+  <div class="grain"></div>
+  <div class="si">
+    <p class="label tc gs">Quem já passou pela primeira turma</p>
+    <h2 class="gs">Quem implementou, sentiu a diferença.</h2>
+    <p class="depo-sub gs">Alunos da primeira turma do Desafio de Implementação IA contam o que mudou no escritório.</p>
+
+    <div class="depo-grid">
+      <div class="depo-card gs">
+        <div class="depo-video" data-yt="YXBaLZCcypw">
+          <img src="https://i.ytimg.com/vi/YXBaLZCcypw/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" class="depo-thumb">
+          <div class="depo-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <p class="depo-qt">&ldquo;É como colocar um fone de ouvido que tira os ruídos e deixa só o que faz sentido. <strong>Foi isso que a implementação resolveu</strong>.&rdquo;</p>
+        <p class="depo-nm">Ricardo Aresso · Sorte Arquitetura</p>
+      </div>
+      <div class="depo-card gs">
+        <div class="depo-video" data-yt="jPVdy8M25kQ">
+          <img src="https://i.ytimg.com/vi/jPVdy8M25kQ/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" class="depo-thumb">
+          <div class="depo-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <p class="depo-qt">&ldquo;Minha maior transformação: hoje eu enxergo <strong>possibilidades que antes eu não enxergava</strong>.&rdquo;</p>
+        <p class="depo-nm">Arq. Paula Rego · 10 anos de carreira</p>
+      </div>
+      <div class="depo-card gs">
+        <div class="depo-video" data-yt="OP8IY6KQg2Y">
+          <img src="https://i.ytimg.com/vi/OP8IY6KQg2Y/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" class="depo-thumb">
+          <div class="depo-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <p class="depo-qt">&ldquo;Estou muito mais organizada e as coisas saem <strong>muito mais rápidas</strong>. Uma coisa de cada vez: começo e termino.&rdquo;</p>
+        <p class="depo-nm">Arq. Patrícia Mouro</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      OFERTA — pré-lançamento + WhatsApp
      ============================================================ -->
 <section class="sec bg-tech" id="oferta" aria-label="Pré-lançamento">
@@ -2508,6 +2593,27 @@ footer a:hover{color:#fff}
         errEl.parentNode.insertBefore(a, errEl.nextSibling);
       }
     });
+  });
+})();
+
+// YOUTUBE LITE EMBED — depoimentos (carrega iframe só no clique)
+(function(){
+  document.querySelectorAll('.depo-video[data-yt]').forEach(function(el){
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('aria-label', 'Reproduzir depoimento em vídeo');
+    function play(){
+      if (el.classList.contains('playing')) return;
+      var id = el.dataset.yt;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      el.appendChild(iframe);
+      el.classList.add('playing');
+    }
+    el.addEventListener('click', play);
+    el.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } });
   });
 })();
 

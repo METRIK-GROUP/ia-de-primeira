@@ -75,7 +75,7 @@
         "@type": "Offer",
         "category": "Primeira turma",
         "availability": "https://schema.org/PreOrder",
-        "availabilityStarts": "2026-08-17T00:00:00-03:00",
+        "availabilityStarts": "2026-08-24T00:00:00-03:00",
         "url": "https://iadeprimeira.rodrigorosar.com.br/"
       }
     },
@@ -793,7 +793,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 
 /* ============================================================
-   OFERTA — estado "vagas abertas" (revela 17/08 00h BRT via JS)
+   OFERTA — estado "vagas abertas" (revela 24/08 00h BRT via JS)
    ============================================================ */
 .offer-open{display:none}
 body.launch-open .offer-pre{display:none}
@@ -981,7 +981,7 @@ footer a:hover{color:#fff}
      ============================================================ -->
 <nav class="nav">
   <div class="nav-in">
-    <a class="nav-brand" href="#hero"><span class="nav-txt-pre">Entre na lista de espera e seja avisado da abertura das vagas, dia 17 de agosto.</span><span class="nav-txt-open">Matrículas encerradas · a primeira turma já está no ar.</span></a>
+    <a class="nav-brand" href="#hero"><span class="nav-txt-pre">Entre na lista de espera e seja avisado da abertura das vagas, dia 24 de agosto.</span><span class="nav-txt-open">Matrículas encerradas · a primeira turma já está no ar.</span></a>
     <a class="nav-cta nav-cta-pre" href="#oferta"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar no grupo VIP</a>
     <a class="nav-cta nav-cta-open" href="#oferta">Garantir minha vaga</a>
   </div>
@@ -994,7 +994,7 @@ footer a:hover{color:#fff}
   <div class="grain"></div>
   <div class="si">
     <img class="hero-logo gs" src="img/logo-iadeprimeira-white.png" width="1149" height="390" alt="IA de Primeira">
-    <span class="hero-offer-note gs">Vagas abrem em 17 de agosto · entre na lista de espera</span>
+    <span class="hero-offer-note gs">Vagas abrem em 24 de agosto · entre na lista de espera</span>
     <h1 class="gs">
       O escritório que você sempre quis, <span class="soft">agora com IA.</span>
     </h1>
@@ -1005,7 +1005,7 @@ footer a:hover{color:#fff}
     <!-- ▼▼▼ RODRIGO: cole aqui o vídeo. Troque o placeholder por:        ▼▼▼ -->
     <!--   <iframe src="URL_DO_VIDEO" allow="autoplay; fullscreen" allowfullscreen></iframe>  (YouTube/Vimeo) -->
     <!--   ou  <video src="renders.mp4" controls poster="..."></video>                          (arquivo local) -->
-    <!-- Fica escondido e só aparece 17/08 às 00h (countdown libera). -->
+    <!-- Fica escondido e só aparece 24/08 às 00h (countdown libera). -->
     <div class="hero-video">
       <div class="hero-video-ph">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -2325,7 +2325,7 @@ footer a:hover{color:#fff}
     <div class="offer-card gs" id="offer-card">
 
       <span class="label">Lista de espera · vagas limitadas</span>
-      <h2>A nova turma abre dia 17 de agosto, uma segunda-feira.</h2>
+      <h2>A nova turma abre dia 24 de agosto, uma segunda-feira.</h2>
       <p class="sub">Entre na lista e seja avisado em primeira mão. Quem está na lista entra antes dos demais e com uma condição especial na abertura.</p>
 
       <div class="count" id="count" aria-live="polite" aria-label="Contagem regressiva para a abertura das vagas">
@@ -2532,8 +2532,8 @@ footer a:hover{color:#fff}
     obs.observe(container);
   })();
 
-  // ===== countdown — abertura da nova turma em 17/08/2026, 00h BRT =====
-  var TARGET = Date.UTC(2026, 7, 17, 3, 0, 0); // 03:00 UTC = 00h BRT de segunda 17/08 — abertura das vagas (countdown da lista de espera)
+  // ===== countdown — abertura da nova turma em 24/08/2026, 00h BRT =====
+  var TARGET = Date.UTC(2026, 7, 24, 3, 0, 0); // 03:00 UTC = 00h BRT de segunda 24/08 — abertura das vagas (countdown da lista de espera)
 
   // Link do checkout — 1 lugar só, vai pros 2 botões (hero + oferta)
   var CHECKOUT_URL = 'https://pay.hotmart.com/C104887272V?off=j3iy21zm&bid=1780320657431';

@@ -508,6 +508,20 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .ft-img-slot img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ============================================================
+   SKILLS — O que você recebe · IA
+   ============================================================ */
+#skills{--c-accent:#ED8662;--c-accent-soft:rgba(237,134,98,0.16)}
+#skills .dobra-lede strong{color:#fff}
+.skills-checks{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
+@media(min-width:520px){.skills-checks{grid-template-columns:1fr 1fr}}
+.skills-check{display:flex;align-items:center;gap:10px}
+.skills-check svg{width:18px;height:18px;flex-shrink:0;color:#ED8662}
+.skills-check span{font-size:14px;color:var(--tx-1)}
+.skills-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.skills-chips span{font-size:11px;padding:5px 12px;background:rgba(255,255,255,0.06);border:1px solid var(--line);border-radius:8px;color:var(--tx-2)}
+.skills-visual{max-width:560px;margin:0 auto;width:100%}
+
+/* ============================================================
    DEPOIMENTOS — Desafio IA de Primeira T1
    ============================================================ */
 #depoimentos{padding:140px 24px}
@@ -2134,6 +2148,105 @@ footer a:hover{color:#fff}
       </div>
 
       <p class="desafio-foot">Encontros gravados · grupo da turma no WhatsApp durante o Desafio · <strong>acesso exclusivo dos alunos dessa turma</strong></p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS — O que você recebe · IA
+     ============================================================ -->
+<section class="sec bg-tech dobra" id="skills" aria-label="O que você recebe: skills de IA prontas">
+  <div class="grain"></div>
+  <div class="dobra-in">
+    <div class="dobra-text">
+      <span class="dobra-num gs">O que você recebe · IA</span>
+      <h2 class="dobra-title gs">As skills prontas que colocam a IA para trabalhar no seu padrão.</h2>
+      <p class="dobra-lede gs">São <strong>mais de 30 skills prontas</strong>, com o <strong>Workspace IA</strong> do escritório já estruturado, templates e guia operacional passo a passo: você instala as soluções e usa no seu padrão, sem depender de horas de estudo.</p>
+      <div class="skills-checks gs">
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>30+ skills prontas</span></div>
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Workspace IA modelo</span></div>
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Guia operacional passo a passo</span></div>
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Template de apresentação</span></div>
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Site de Tour 360</span></div>
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Memorial descritivo</span></div>
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Lista de aquisições</span></div>
+        <div class="skills-check"><svg aria-hidden="true"><use href="#i-check"/></svg><span>Biblioteca Técnica modelo</span></div>
+      </div>
+      <div class="skills-chips gs">
+        <span>Claude</span>
+        <span>Cowork</span>
+        <span>Claude Code</span>
+        <span>Flora</span>
+        <span>1 Click Render</span>
+        <span>Notion</span>
+      </div>
+    </div>
+    <div class="skills-visual gs">
+        <style>
+          .ia-orbit{width:100%;height:auto;display:block}
+          .ia-orbit .spin{animation:iaSpin 90s linear infinite;transform-origin:380px 280px}
+          .ia-orbit .spin-rev{animation:iaSpinRev 70s linear infinite;transform-origin:380px 280px}
+          .ia-orbit .up{animation:iaSpinRev 90s linear infinite;transform-box:fill-box;transform-origin:center}
+          .ia-orbit .up-rev{animation:iaSpin 70s linear infinite;transform-box:fill-box;transform-origin:center}
+          @keyframes iaSpin{to{transform:rotate(360deg)}}
+          @keyframes iaSpinRev{to{transform:rotate(-360deg)}}
+          .ia-orbit .ia-badge{filter:drop-shadow(0 6px 14px rgba(0,0,0,0.35))}
+          .ia-orbit .ia-breathe{animation:iaBreathe 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+          @keyframes iaBreathe{0%,100%{opacity:0.75}50%{opacity:1}}
+          @media (prefers-reduced-motion:reduce){.ia-orbit .spin,.ia-orbit .spin-rev,.ia-orbit .up,.ia-orbit .up-rev,.ia-orbit .ia-breathe{animation:none!important}}
+        </style>
+        <svg class="ia-orbit" viewBox="0 0 760 560" role="img" aria-label="Mapa das skills de IA: ícones de e-mail, mensagens, documentos, agenda, finanças, imagens, apresentações e gestão orbitando o núcleo de IA">
+          <defs>
+            <radialGradient id="ia-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ED8662" stop-opacity="0.30"/>
+              <stop offset="55%" stop-color="#ED8662" stop-opacity="0.10"/>
+              <stop offset="100%" stop-color="#ED8662" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="ia-glow-tight" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#F6A583" stop-opacity="0.38"/>
+              <stop offset="100%" stop-color="#F6A583" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="ia-core" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F38760"/>
+              <stop offset="100%" stop-color="#D96D45"/>
+            </linearGradient>
+          </defs>
+          <circle cx="380" cy="280" r="150" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.5"/>
+          <circle cx="380" cy="280" r="228" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" opacity="0.8"/>
+          <circle cx="380" cy="280" r="268" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1" stroke-dasharray="2 8" opacity="0.55"/>
+          <g class="spin" stroke="rgba(255,255,255,0.16)" stroke-width="1" opacity="0.65">
+            <line x1="380" y1="280" x2="380" y2="55"/><line x1="380" y1="280" x2="575" y2="167"/><line x1="380" y1="280" x2="575" y2="393"/><line x1="380" y1="280" x2="380" y2="505"/><line x1="380" y1="280" x2="185" y2="393"/><line x1="380" y1="280" x2="185" y2="167"/>
+          </g>
+          <g class="spin-rev" stroke="rgba(255,255,255,0.16)" stroke-width="1" stroke-dasharray="3 6" opacity="0.65">
+            <line x1="380" y1="280" x2="483" y2="177"/><line x1="380" y1="280" x2="483" y2="383"/><line x1="380" y1="280" x2="277" y2="383"/><line x1="380" y1="280" x2="277" y2="177"/>
+          </g>
+          <circle cx="380" cy="280" r="86" fill="#F5F4F0"/>
+          <circle cx="380" cy="280" r="96" fill="none" stroke="#ED8662" stroke-width="1" opacity="0.25"/>
+          <g class="ia-breathe">
+            <circle cx="380" cy="280" r="130" fill="url(#ia-glow)"/>
+            <circle cx="380" cy="280" r="82" fill="url(#ia-glow-tight)"/>
+          </g>
+          <g fill="rgba(255,255,255,0.4)">
+            <circle cx="380" cy="130" r="3"/><circle cx="510" cy="355" r="3"/><circle cx="250" cy="355" r="3"/>
+            <circle cx="218.8" cy="118.8" r="3.5"/><circle cx="541.2" cy="441.2" r="3.5"/>
+          </g>
+          <image href="img/claude-simbolo.webp" x="310" y="210" width="140" height="140"/>
+          <g class="spin">
+            <g transform="translate(380,55)"><g class="up"><circle r="26" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-12,-12)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></g></g></g>
+            <g transform="translate(575,167)"><g class="up"><circle r="26" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-12,-12)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></g></g></g>
+            <g transform="translate(575,393)"><g class="up"><circle r="26" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-12,-12)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></g></g></g>
+            <g transform="translate(380,505)"><g class="up"><circle r="26" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-12,-12)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></g></g></g>
+            <g transform="translate(185,393)"><g class="up"><circle r="26" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-12,-12)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></g></g></g>
+            <g transform="translate(185,167)"><g class="up"><circle r="26" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-12,-12)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></g></g></g>
+          </g>
+          <g class="spin-rev">
+            <g transform="translate(483,177)"><g class="up-rev"><circle r="23" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-11,-11)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform-origin="11 11"><g transform="scale(0.92)"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></g></g></g></g>
+            <g transform="translate(483,383)"><g class="up-rev"><circle r="23" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-11,-11)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><g transform="scale(0.92)"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></g></g></g></g>
+            <g transform="translate(277,383)"><g class="up-rev"><circle r="23" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-11,-11)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><g transform="scale(0.92)"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></g></g></g></g>
+            <g transform="translate(277,177)"><g class="up-rev"><circle r="23" fill="#FFFFFF" stroke="rgba(255,255,255,0.16)" stroke-width="1.5" class="ia-badge"/><g transform="translate(-11,-11)" fill="none" stroke="#3D3D3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><g transform="scale(0.92)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></g></g></g></g>
+          </g>
+        </svg>
 
     </div>
   </div>

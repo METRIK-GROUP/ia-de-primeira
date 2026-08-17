@@ -7,13 +7,13 @@
 <meta name="color-scheme" content="dark">
 
 <title>IA de Primeira | Implementação de IA no escritório de arquitetura | METRIK Instituto</title>
-<meta name="description" content="O curso que ensina arquitetos e designers de interiores a usar IA de verdade no escritório. Documentação, desenvolvimento, representação e gestão. Matrículas encerradas.">
+<meta name="description" content="O curso que ensina arquitetos e designers de interiores a usar IA de verdade no escritório. Documentação, desenvolvimento, representação e gestão. Vagas abertas: R$ 2.997 à vista ou 12x de R$ 309,96.">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="IA de Primeira | IA aplicada ao seu escritório de arquitetura">
-<meta property="og:description" content="Documentação, desenvolvimento, representação e gestão com IA. Matrículas encerradas — próxima turma em breve.">
+<meta property="og:description" content="Documentação, desenvolvimento, representação e gestão com IA. Vagas abertas para a nova turma.">
 <meta property="og:site_name" content="METRIK Instituto">
 <meta property="og:url" content="https://iadeprimeira.rodrigorosar.com.br/">
 <meta property="og:image" content="https://iadeprimeira.rodrigorosar.com.br/img/og-cover.png">
@@ -73,9 +73,10 @@
       },
       "offers": {
         "@type": "Offer",
-        "category": "Primeira turma",
-        "availability": "https://schema.org/PreOrder",
-        "availabilityStarts": "2026-08-24T00:00:00-03:00",
+        "category": "Nova turma",
+        "price": "2997.00",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock",
         "url": "https://iadeprimeira.rodrigorosar.com.br/"
       }
     },
@@ -741,7 +742,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .offer-foot{margin-top:24px;font-size:12.5px;color:var(--tx-3);letter-spacing:0.02em}
 
 /* ============================================================
-   BOTÃO PRIMÁRIO (accent) — CTA de lista de espera
+   BOTÃO PRIMÁRIO (accent) — CTA principal
    ============================================================ */
 .btn-primary{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -799,7 +800,7 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 
 /* ============================================================
-   OFERTA — estado "vagas abertas" (revela 24/08 00h BRT via JS)
+   OFERTA — vagas abertas
    ============================================================ */
 .offer-open{display:none}
 body.launch-open .offer-pre{display:none}
@@ -987,9 +988,8 @@ footer a:hover{color:#fff}
      ============================================================ -->
 <nav class="nav">
   <div class="nav-in">
-    <a class="nav-brand" href="#hero"><span class="nav-txt-pre">Entre na lista de espera e seja avisado da abertura das vagas, dia 24 de agosto.</span><span class="nav-txt-open">Matrículas encerradas · a primeira turma já está no ar.</span></a>
-    <a class="nav-cta nav-cta-pre" href="#oferta"><svg aria-hidden="true"><use href="#i-wa"/></svg>Entrar no grupo VIP</a>
-    <a class="nav-cta nav-cta-open" href="#oferta">Garantir minha vaga</a>
+    <a class="nav-brand" href="#hero"><span class="nav-txt-pre">Vagas abertas · garanta a sua vaga na nova turma.</span></a>
+    <a class="nav-cta nav-cta-pre" href="#oferta">Garantir minha vaga</a>
   </div>
 </nav>
 
@@ -1000,7 +1000,7 @@ footer a:hover{color:#fff}
   <div class="grain"></div>
   <div class="si">
     <img class="hero-logo gs" src="img/logo-iadeprimeira-white.png" width="1149" height="390" alt="IA de Primeira">
-    <span class="hero-offer-note gs">Vagas abrem em 24 de agosto · entre na lista de espera</span>
+    <span class="hero-offer-note gs">Vagas abertas · nova turma com vagas limitadas</span>
     <h1 class="gs">
       O escritório que você sempre quis, <span class="soft">agora com IA.</span>
     </h1>
@@ -1011,7 +1011,6 @@ footer a:hover{color:#fff}
     <!-- ▼▼▼ RODRIGO: cole aqui o vídeo. Troque o placeholder por:        ▼▼▼ -->
     <!--   <iframe src="URL_DO_VIDEO" allow="autoplay; fullscreen" allowfullscreen></iframe>  (YouTube/Vimeo) -->
     <!--   ou  <video src="renders.mp4" controls poster="..."></video>                          (arquivo local) -->
-    <!-- Fica escondido e só aparece 24/08 às 00h (countdown libera). -->
     <div class="hero-video">
       <div class="hero-video-ph">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -1021,7 +1020,7 @@ footer a:hover{color:#fff}
 
     <div class="hero-cta-row gs">
       <a class="btn-primary btn-hero" href="#oferta">
-        Entrar na lista de espera
+        Garantir minha vaga
         <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="hero-areas">
@@ -2325,50 +2324,25 @@ footer a:hover{color:#fff}
 <!-- ============================================================
      OFERTA — pré-lançamento + WhatsApp
      ============================================================ -->
-<section class="sec bg-tech" id="oferta" aria-label="Pré-lançamento">
+<section class="sec bg-tech" id="oferta" aria-label="Oferta">
   <div class="grain"></div>
   <div class="si">
     <div class="offer-card gs" id="offer-card">
 
-      <span class="label">Lista de espera · vagas limitadas</span>
-      <h2>A nova turma abre dia 24 de agosto, uma segunda-feira.</h2>
-      <p class="sub">Entre na lista e seja avisado em primeira mão. Quem está na lista entra antes dos demais e com uma condição especial na abertura.</p>
+      <span class="label">Vagas abertas · nova turma</span>
+      <h2>Garanta sua vaga no IA de Primeira.</h2>
 
-      <div class="count" id="count" aria-live="polite" aria-label="Contagem regressiva para a abertura das vagas">
-        <div class="count-cell"><div class="count-num" id="c-d">00</div><div class="count-lab">dias</div></div>
-        <div class="count-cell"><div class="count-num" id="c-h">00</div><div class="count-lab">horas</div></div>
-        <div class="count-cell"><div class="count-num" id="c-m">00</div><div class="count-lab">min</div></div>
-        <div class="count-cell"><div class="count-num" id="c-s">00</div><div class="count-lab">seg</div></div>
+      <div class="offer-price">
+        <span class="price-label">12x de</span>
+        <span class="price-main">R$ 309,96</span>
+        <span class="price-note">ou <strong>R$ 2.997</strong> à vista</span>
       </div>
 
-      <form class="wl-form" id="wl-form" novalidate>
-        <div class="wl-field">
-          <label for="wl-nome">Nome</label>
-          <input class="wl-input" type="text" id="wl-nome" name="nome" autocomplete="given-name" placeholder="Seu nome" required>
-        </div>
-        <div class="wl-field">
-          <label for="wl-email">E-mail</label>
-          <input class="wl-input" type="email" id="wl-email" name="email" autocomplete="email" inputmode="email" placeholder="voce@exemplo.com" required>
-        </div>
-        <div class="wl-field">
-          <label for="wl-whatsapp">WhatsApp</label>
-          <input class="wl-input" type="tel" id="wl-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" required>
-        </div>
+      <a class="btn-checkout js-checkout" href="#" id="cta-checkout" target="_blank" rel="noopener" data-checkout-pendente="true">
+        Garantir minha vaga
+      </a>
 
-        <!-- honeypot anti-bot: humano nunca vê nem preenche -->
-        <div class="wl-hp" aria-hidden="true">
-          <label for="wl-website">Não preencha</label>
-          <input type="text" id="wl-website" name="website" tabindex="-1" autocomplete="off">
-        </div>
-
-        <div class="wl-error" id="wl-error" role="alert" aria-live="assertive"></div>
-
-        <button class="btn-primary wl-submit" type="submit" id="wl-submit">
-          <span class="wl-submit-label">Entrar na lista de espera</span>
-        </button>
-      </form>
-
-      <p class="wl-formfoot">Sem spam.</p>
+      <p class="offer-foot">Vagas limitadas · garanta a sua antes de esgotar</p>
 
     </div>
   </div>
@@ -2538,10 +2512,7 @@ footer a:hover{color:#fff}
     obs.observe(container);
   })();
 
-  // ===== countdown — abertura da nova turma em 24/08/2026, 00h BRT =====
-  var TARGET = Date.UTC(2026, 7, 24, 3, 0, 0); // 03:00 UTC = 00h BRT de segunda 24/08 — abertura das vagas (countdown da lista de espera)
-
-  // Link do checkout — 1 lugar só, vai pros 2 botões (hero + oferta)
+  // Link do checkout — 1 lugar só, vai pra todos os botões de compra
   var CHECKOUT_URL = 'https://pay.hotmart.com/C104887272V?off=j3iy21zm&bid=1780320657431';
   if (CHECKOUT_URL && CHECKOUT_URL !== '#') {
     document.querySelectorAll('.js-checkout').forEach(function(a){
@@ -2549,196 +2520,8 @@ footer a:hover{color:#fff}
       a.removeAttribute('data-checkout-pendente');
     });
   }
-
-  var d = document.getElementById('c-d');
-  var h = document.getElementById('c-h');
-  var m = document.getElementById('c-m');
-  var s = document.getElementById('c-s');
-
-  function pad(n){ return n < 10 ? '0' + n : '' + n; }
-
-  // ===== trava de hora-do-servidor =====
-  // Regra de ouro: só revela a oferta se a HORA DO SERVIDOR confirmar que já passou
-  // das 07h. Nunca confia só no relógio do visitante (que pode estar adiantado).
-  var ti = null;
-  var skew = 0;              // diferença servidor - relógio local (ms)
-  var timeVerified = false;  // só abre depois que o servidor confirma a hora
-  var syncing = false;
-
-  function trustedNow(){ return Date.now() + skew; } // hora corrigida pelo servidor
-
-  function syncServerTime(){
-    if (syncing) return;
-    syncing = true;
-    var finish = function(verified){
-      syncing = false;
-      if (verified) timeVerified = true;
-      tick();
-      // se ainda não verificou (rede falhou), tenta de novo em 5s
-      if (!timeVerified) setTimeout(syncServerTime, 5000);
-    };
-    try {
-      fetch(location.pathname + '?_t=' + Date.now(), { method: 'HEAD', cache: 'no-store' })
-        .then(function(r){
-          var ds = r.headers.get('date'); // cabeçalho Date do servidor (UTC, confiável)
-          var st = ds ? Date.parse(ds) : NaN;
-          if (!isNaN(st)) { skew = st - Date.now(); finish(true); }
-          else { finish(false); }
-        })
-        .catch(function(){ finish(false); });
-    } catch(e){ finish(false); }
-  }
-
-  function openOffer(){
-    d.textContent = '00'; h.textContent = '00'; m.textContent = '00'; s.textContent = '00';
-    document.body.classList.add('launch-open'); // revela vídeo na hero + checkout na oferta
-    if (ti) clearInterval(ti);
-  }
-
-  // Confirmação FINAL antes de revelar: busca a hora fresca do servidor e só abre
-  // se o próprio servidor já passou das 07h. Assim, mudar o relógio local não força a abertura.
-  var confirming = false;
-  function confirmAndOpen(){
-    if (confirming || document.body.classList.contains('launch-open')) return;
-    confirming = true;
-    var release = function(){ confirming = false; };
-    try {
-      fetch(location.pathname + '?_c=' + Date.now(), { method: 'HEAD', cache: 'no-store' })
-        .then(function(r){
-          var ds = r.headers.get('date');
-          var st = ds ? Date.parse(ds) : NaN;
-          if (!isNaN(st)) {
-            skew = st - Date.now();        // re-corrige o fuso com a hora fresca
-            if (st >= TARGET) { openOffer(); return; } // servidor confirma: pode abrir
-          }
-          release(); // ainda não chegou a hora (ou resposta inválida): segue escondido
-        })
-        .catch(function(){ release(); }); // rede falhou: segue escondido, tenta no próximo tick
-    } catch(e){ release(); }
-  }
-
-  function tick(){
-    var diff = TARGET - trustedNow();
-    if (diff <= 0) {
-      // só abre após o servidor confirmar (consulta fresca); senão segura escondido
-      if (timeVerified) { confirmAndOpen(); }
-      d.textContent = '00'; h.textContent = '00'; m.textContent = '00'; s.textContent = '00';
-      return;
-    }
-    var sec = Math.floor(diff/1000);
-    var dd  = Math.floor(sec/86400);
-    var hh  = Math.floor((sec%86400)/3600);
-    var mm  = Math.floor((sec%3600)/60);
-    var ss  = sec%60;
-    d.textContent = pad(dd); h.textContent = pad(hh); m.textContent = pad(mm); s.textContent = pad(ss);
-  }
-
-  tick();                          // mostra o contador na hora (display)
-  syncServerTime();                // confirma a hora real com o servidor
-  ti = setInterval(tick, 1000);    // atualiza a cada segundo
-  setInterval(syncServerTime, 60000); // re-sincroniza a cada 1 min (anti-drift)
 })();
 
-// ============================================================
-// FORMULÁRIO — lista de espera (envia pro dashboard, redireciona pro obrigado)
-// ============================================================
-(function(){
-  var ENDPOINT = 'https://dashboard.rodrigorosar.com.br/api/public/waitlist';
-  var GROUP_URL = 'https://chat.whatsapp.com/IrJJWvfXFQnK1evVfJvCsz';
-  var SUBMIT_LABEL = 'Entrar na lista de espera';
-
-  var form = document.getElementById('wl-form');
-  if (!form) return;
-  var btn    = document.getElementById('wl-submit');
-  var lblEl  = form.querySelector('.wl-submit-label');
-  var errEl  = document.getElementById('wl-error');
-  var nome   = document.getElementById('wl-nome');
-  var email  = document.getElementById('wl-email');
-  var wa     = document.getElementById('wl-whatsapp');
-  var hp     = document.getElementById('wl-website');
-
-  function showError(msg, field){
-    errEl.textContent = msg || '';
-    [nome,email,wa].forEach(function(f){ f.classList.remove('is-invalid'); });
-    if (field){ field.classList.add('is-invalid'); field.focus(); }
-  }
-  function clearFieldError(){ this.classList.remove('is-invalid'); }
-  [nome,email,wa].forEach(function(f){ f.addEventListener('input', clearFieldError); });
-
-  function loading(on){
-    btn.disabled = on;
-    if (on){
-      lblEl.innerHTML = '<span class="wl-spinner" aria-hidden="true"></span>';
-      btn.setAttribute('aria-busy','true');
-    } else {
-      lblEl.textContent = SUBMIT_LABEL;
-      btn.removeAttribute('aria-busy');
-    }
-  }
-
-  // máscara leve de telefone BR enquanto digita
-  wa.addEventListener('input', function(){
-    var v = wa.value.replace(/\D/g,'').slice(0,11);
-    if (v.length > 6)      v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
-    else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
-    else if (v.length > 0) v = '(' + v;
-    wa.value = v;
-  });
-
-  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var vNome = nome.value.trim();
-    var vEmail = email.value.trim().toLowerCase();
-    var vWa = wa.value.replace(/\D/g,'');
-
-    if (!vNome)              { return showError('Informe seu nome.', nome); }
-    if (!EMAIL_RE.test(vEmail)) { return showError('Informe um e-mail válido.', email); }
-    if (vWa.length < 10)     { return showError('Informe um WhatsApp válido com DDD.', wa); }
-    showError('');
-    loading(true);
-
-    var utm = {};
-    new URLSearchParams(location.search).forEach(function(val, key){
-      if (key.indexOf('utm_') === 0) utm[key] = val;
-    });
-
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        nome: vNome, email: vEmail, whatsapp: vWa,
-        consent: true, website: hp ? hp.value : '', utm: utm
-      })
-    })
-    .then(function(r){
-      // 201 (novo) e 200 (já existia / honeypot) contam como sucesso
-      if (r.ok) {
-        try { sessionStorage.setItem('wl_nome', vNome.split(/\s+/)[0]); } catch(_){}
-        window.location.href = 'obrigado.html';
-        return;
-      }
-      return r.json().catch(function(){ return {}; }).then(function(data){
-        loading(false);
-        showError(data.error || 'Não foi possível enviar agora. Tente novamente.');
-      });
-    })
-    .catch(function(){
-      // Falha de rede: não perde o lead — manda direto pro grupo
-      loading(false);
-      showError('Conexão instável. Você pode entrar no grupo direto:');
-      var a = document.createElement('a');
-      a.href = GROUP_URL; a.target = '_blank'; a.rel = 'noopener';
-      a.className = 'btn-wa'; a.style.marginTop = '12px';
-      a.textContent = 'Entrar no grupo no WhatsApp';
-      if (!errEl.nextElementSibling || !errEl.nextElementSibling.classList.contains('btn-wa')) {
-        errEl.parentNode.insertBefore(a, errEl.nextSibling);
-      }
-    });
-  });
-})();
 
 // YOUTUBE LITE EMBED — depoimentos (carrega iframe só no clique)
 (function(){

@@ -544,7 +544,13 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 }
 .depo-sub{font-size:clamp(14px,1.7vw,17px);color:var(--tx-2);max-width:680px;margin:0 auto 64px;line-height:1.6;text-align:center}
 .depo-grid{display:grid;grid-template-columns:1fr;gap:22px;max-width:1180px;margin:0 auto}
-@media(min-width:900px){.depo-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:900px){
+  .depo-grid{grid-template-columns:repeat(6,1fr);gap:20px}
+  .depo-card{grid-column:span 2}
+  /* 5 cards: centraliza os 2 da segunda linha */
+  .depo-card:nth-child(4){grid-column:2/4}
+  .depo-card:nth-child(5){grid-column:4/6}
+}
 .depo-card{
   position:relative;padding:24px;
   border:1px solid rgba(122,175,212,0.2);
@@ -2282,14 +2288,6 @@ footer a:hover{color:#fff}
         </div>
         <p class="depo-qt">&ldquo;A IA não substitui o olhar do arquiteto: <strong>ela potencializa o que a gente já sabe fazer</strong>. Hoje eu enxergo possibilidades que antes eu não enxergava.&rdquo;</p>
         <p class="depo-nm">Arq. Paula Rego · 10 anos de carreira</p>
-      </div>
-      <div class="depo-card gs">
-        <div class="depo-video" data-yt="OP8IY6KQg2Y">
-          <img src="https://i.ytimg.com/vi/OP8IY6KQg2Y/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" class="depo-thumb">
-          <div class="depo-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <p class="depo-qt">&ldquo;Estou muito mais organizada e as coisas saem <strong>muito mais rápidas</strong>. Uma coisa de cada vez: começo e termino.&rdquo;</p>
-        <p class="depo-nm">Arq. Patrícia Mouro</p>
       </div>
       <div class="depo-card gs">
         <div class="depo-video" data-yt="e8R3XD8sHZU">
